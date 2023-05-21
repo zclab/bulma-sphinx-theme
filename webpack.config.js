@@ -1,9 +1,6 @@
 const { resolve } = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const dedent = require("dedent");
 const { Compilation } = require("webpack");
 
 const scriptPath = resolve(__dirname, "src/bulma_sphinx_theme/assets/scripts");
@@ -21,7 +18,7 @@ module.exports = {
     ],
   },
   output: { filename: "scripts/[name].js", path: staticPath },
-  plugins: [new MiniCssExtractPlugin({ filename: "styles/[name].css" }), htmlWebpackPlugin, copyPlugin],
+  plugins: [new MiniCssExtractPlugin({ filename: "styles/[name].css" })],
   optimization: { minimizer: [`...`, new CssMinimizerPlugin()] },
   module: {
     rules: [{
