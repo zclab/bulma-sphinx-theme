@@ -22,7 +22,11 @@ titles_only=True)
 
 {%- block mainbody -%}
 <div class="columns">
-    <nav class="column is-2"></nav>
+    <nav class="column is-2">
+        {% block left_sidebar %}
+        {%- include "sections/sidenav.html" -%}
+        {% endblock left_sidebar %}
+    </nav>
 
     <main class="column is-8">
         <article role="main" class="container">

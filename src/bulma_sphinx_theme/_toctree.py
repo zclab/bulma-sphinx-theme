@@ -204,9 +204,7 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 page = toc.attributes["parent"] if page == "self" else page
 
                 # If this is the active ancestor page, add a class so we highlight it
-                current = (
-                    "active md-tabs__item--active" if page == active_header_page else ""
-                )
+                current = "is-active" if page == active_header_page else ""
 
                 # sanitize page title for use in the html output if needed
                 if title is None:
@@ -229,11 +227,9 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
                 # create the html output
                 links_html.append(
                     f"""
-                    <li class="md-tabs__item {current}">
-                      <a class="md-tabs__link nav-{link_status}" href="{link_href}">
+                      <a class="navbar-item {current} nav-{link_status}" href="{link_href}">
                         {title}
                       </a>
-                    </li>
                 """
                 )
 
@@ -241,11 +237,9 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
         for external_link in context["theme_external_links"]:
             links_html.append(
                 f"""
-                <li class="md-tabs__item">
-                  <a class="md-tabs__link nav-external" href="{ external_link["url"] }">
+                  <a class="navbar-item nav-external" href="{ external_link["url"] }">
                     { external_link["name"] }
                   </a>
-                </li>
                 """
             )
 
