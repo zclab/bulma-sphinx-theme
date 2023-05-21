@@ -1,0 +1,25 @@
+{
+  "name": "bulma_sphinx_theme",
+  "repository": "https://github.com/zclab/bulma-sphinx-theme",
+  "scripts": {
+    "build": "webpack"
+  },
+  "devDependencies": {
+    "dedent": "^0.7.0",
+    "html-webpack-plugin": "^5.5.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "autoprefixer": "^10.4.14",
+    "sass": "^1.59.2",
+    "css-loader": "^6.7.3",
+    "css-minimizer-webpack-plugin": "^4.2.2",
+    "mini-css-extract-plugin": "^2.7.3",
+    "postcss-loader": "^6.2.0",
+    "sass-loader": "^13.2.0",
+    "webpack": "^5.76.1",
+    "webpack-cli": "^5.0.1",
+    "postcss": "^8.4.21"
+  },
+  "dependencies": {
+    "bulma": "^0.9.4"
+  }
+}

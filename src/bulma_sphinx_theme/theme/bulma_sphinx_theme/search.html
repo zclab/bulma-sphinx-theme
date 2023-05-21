@@ -1,0 +1,39 @@
+{% extends "page.html" %}
+
+{%- block regular_scripts -%}
+{{ super() }}
+<script src="{{ pathto('_static/searchtools.js', 1) }}"></script>
+<script src="{{ pathto('_static/language_data.js', 1) }}"></script>
+{%- endblock regular_scripts -%}
+
+{%- block htmltitle -%}
+<title>{{ _("Search") }} - {{ docstitle }}</title>
+{%- endblock htmltitle -%}
+
+{% block body %}
+<noscript>
+    <div class="admonition error">
+        <p class="admonition-title">{% trans %}Error{% endtrans %}</p>
+        <p>
+            {% trans %}Please activate JavaScript to enable the search functionality.{% endtrans %}
+        </p>
+    </div>
+</noscript>
+
+<div id="search-results"></div>
+
+<script>
+    // Activate the search field on page load
+    let searchInput = document.querySelector("form.search-wrapper input");
+    if (searchInput) {
+        searchInput.focus();
+        searchInput.select();
+        console.log("[BST]: Set focus on search field.");
+    }
+</script>
+{% endblock body %}
+
+{% block scripts -%}
+{{ super() }}
+<script src="{{ pathto('searchindex.js', 1) }}"></script>
+{%- endblock scripts %}

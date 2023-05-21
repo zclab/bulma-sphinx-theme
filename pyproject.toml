@@ -1,0 +1,72 @@
+[build-system]
+requires = ["sphinx-theme-builder >= 0.2.0b2"]
+build-backend = "sphinx_theme_builder"
+
+[tool.sphinx-theme-builder]
+node-version = "18.15.0"
+theme-name = "bulma_sphinx_theme"
+additional-compiled-static-assets = [
+  "webpack-macros.html",
+  "locales/",
+  "vendor/",
+]
+
+[project]
+name = "bulma-sphinx-theme"
+description = "A sphinx theme based on bulma."
+dynamic = ["version"]
+readme = "README.md"
+
+requires-python = ">=3.8"
+dependencies = [
+  "beautifulsoup4",
+  "sphinx >= 5.0,< 8.0",
+  "sphinx-basic-ng",
+  "pygments >= 2.7",
+]
+
+license = { file = "LICENSE" }
+authors = [{ name = "zclab", email = "syfhub@hotmail.com" }]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Framework :: Sphinx",
+  "Framework :: Sphinx :: Theme",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Web Environment",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Operating System :: OS Independent",
+  "Topic :: Documentation",
+  "Topic :: Software Development :: Documentation",
+]
+
+[project.optional-dependencies]
+dev = ['sphinx-theme-builder[cli] >= 0.2.0b2']
+
+[project.entry-points]
+"sphinx.html_themes" = { bulma_sphinx_theme = "bulma_sphinx_theme" }
+
+[project.urls]
+Repository = "https://github.com/zclab/bulma-sphinx-theme"
+Documentation = "https://bulma-sphinx-theme.readthedocs.io/en/latest/"
+
+[tool.ruff]
+ignore-init-module-imports = true
+fix = true
+ignore = [
+  "E501", # line too long | Black take care of it
+]
+
+[tool.djlint]
+profile = "jinja"
+extension = "html"
+indent = 2
+max_line_length = 120
+use_gitignore = true
+format_js = true
+format_css = true
+ignore = "H006,J018,T003,H025"

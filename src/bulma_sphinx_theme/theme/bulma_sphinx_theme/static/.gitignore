@@ -1,0 +1,8 @@
+*.eot
+*.woff
+*.woff2
+webpack-macros.html
+vendor
+scripts
+locales
+styles

@@ -1,0 +1,9 @@
+{% if show_sphinx %}
+<p class="sphinx-version">
+    {% trans sphinx_version=sphinx_version|e %}Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> {{
+    sphinx_version }} {% endtrans %} {{ translate('with') }} <a href="https://github.com/zclab/bulma-sphinx-theme">
+        Bulma sphinx theme </a> {{
+    theme_version }}.
+    <br />
+</p>
+{% endif %}
