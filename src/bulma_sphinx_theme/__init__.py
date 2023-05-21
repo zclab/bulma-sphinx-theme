@@ -5,6 +5,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List
 from sphinx.builders.html import StandaloneHTMLBuilder
+from ._toctree import add_toctree_functions
 from .utils import get_theme_options
 
 __version__ = "0.0.0"
@@ -77,6 +78,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.add_html_theme("bulma_sphinx_theme", theme_dir)
 
     app.connect("html-page-context", _html_page_context)
+    app.connect("html-page-context", add_toctree_functions)
     app.connect("builder-inited", _builder_inited)
     app.connect("builder-inited", _update_config)
     app.config.templates_path.append(str(theme_dir / "components"))
