@@ -3,6 +3,10 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { Compilation } = require("webpack");
 
+// Compile our translation files
+const { exec } = require("child_process");
+exec("python src/bulma_sphinx_theme/_translations.py");
+
 const scriptPath = resolve(__dirname, "src/bulma_sphinx_theme/assets/scripts");
 const stylePath = resolve(__dirname, "src/bulma_sphinx_theme/assets/styles");
 const staticPath = resolve(__dirname, "src/bulma_sphinx_theme/theme/bulma_sphinx_theme/static");

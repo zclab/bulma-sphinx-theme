@@ -1,5 +1,17 @@
 {% extends "base.html" %}
 
+{%- set sidebar_nav_html = generate_toctree_html(
+"sidebar",
+show_nav_level=theme_show_nav_level|int,
+maxdepth=theme_navigation_depth|int,
+collapse=theme_collapse_navigation|tobool,
+includehidden=True,
+titles_only=True)
+-%}
+
+{%- set head_nav_html = generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown)
+-%}
+
 {% block htmlbody -%}
 
 {% block docs_headnav %}
