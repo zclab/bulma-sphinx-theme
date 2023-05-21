@@ -8,6 +8,17 @@
 {% endblock docs_headnav %}
 
 {%- block mainbody -%}
+<div class="bulma-docs">
+    <nav class="bulma-docs-nav"></nav>
+
+    <main class="bulma-docs-main">
+        <article role="main" class="container">
+            {% block body %}{{ body }}{% endblock body %}
+        </article>
+    </main>
+
+    <aside class="bulma-docs-side"></aside>
+</div>
 {%- endblock mainbody -%}
 
 {%- endblock htmlbody %}
