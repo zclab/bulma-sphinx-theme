@@ -16,20 +16,21 @@ titles_only=True)
 
 {% block docs_headnav %}
 <nav class="navbar" role="navigation" aria-label="main navigation">
+    {% include "sections/headnav.html" %}
 </nav>
 {% endblock docs_headnav %}
 
 {%- block mainbody -%}
-<div class="bulma-docs">
-    <nav class="bulma-docs-nav"></nav>
+<div class="columns">
+    <nav class="column is-2"></nav>
 
-    <main class="bulma-docs-main">
+    <main class="column is-8">
         <article role="main" class="container">
             {% block body %}{{ body }}{% endblock body %}
         </article>
     </main>
 
-    <aside class="bulma-docs-side"></aside>
+    <aside class="column is-2"></aside>
 </div>
 {%- endblock mainbody -%}
 

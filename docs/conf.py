@@ -17,7 +17,6 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
-    "stmaterial.demo.sphinxext",
     "myst_parser",
     "sphinx_inline_tabs",
     "sphinx_design",
