@@ -1,4 +1,16 @@
 .bulma-sidenav {
+  display: block;
+  background-color: azure;
+
+  .sidenav-viewport {
+    height: 100%;
+    max-height: 100vh;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.bulma-sidenav {
   label.toctree-toggle {
     position: absolute;
     top: 0;
