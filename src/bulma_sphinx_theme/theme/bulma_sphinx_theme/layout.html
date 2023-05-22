@@ -21,20 +21,22 @@ titles_only=True)
 {% endblock docs_headnav %}
 
 {%- block mainbody -%}
-<div class="columns">
-    <nav class="column is-2">
-        {% block left_sidebar %}
-        {%- include "sections/sidenav.html" -%}
-        {% endblock left_sidebar %}
-    </nav>
+<div class="bulma-main">
+    <div class="bulma-sidenav">
+        <div class="sidenav-viewport">
+            {% block left_sidebar %}
+            {%- include "sections/sidenav.html" -%}
+            {% endblock left_sidebar %}
+        </div>
+    </div>
 
-    <main class="column is-8">
+    <main class="bulma-content">
         <article role="main" class="container">
             {% block body %}{{ body }}{% endblock body %}
         </article>
     </main>
 
-    <aside class="column is-2"></aside>
+    <aside class="bulma-tocnav"></aside>
 </div>
 {%- endblock mainbody -%}
 
