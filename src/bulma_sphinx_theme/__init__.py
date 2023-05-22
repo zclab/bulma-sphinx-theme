@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any, Dict, List
 from sphinx.builders.html import StandaloneHTMLBuilder
 from ._toctree import add_toctree_functions
+from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
 __version__ = "0.0.0"
@@ -76,6 +77,8 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     theme_dir = _get_html_theme_path()
     app.add_html_theme("bulma_sphinx_theme", theme_dir)
+    app.add_post_transform(ShortenLinkTransform)
+    app.add_post_transform(WrapTableAndMathInAContainerTransform)
 
     app.connect("html-page-context", _html_page_context)
     app.connect("html-page-context", add_toctree_functions)
