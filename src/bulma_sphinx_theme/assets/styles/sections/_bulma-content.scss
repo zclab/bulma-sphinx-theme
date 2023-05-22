@@ -1,5 +1,5 @@
 .bulma-content {
-  width: 60%;
+  width: calc(100% - var(--sidenav-width) - var(--tocnav-width));
   padding: 0 var(--docs-outer) var(--docs-outer) var(--docs-outer);
 
   article {
