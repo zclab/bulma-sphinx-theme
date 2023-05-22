@@ -92,9 +92,7 @@ def _add_collapse_checkboxes(soup):
         label = soup.new_tag(
             "label", attrs={"for": checkbox_name, "class": "toctree-toggle"}
         )
-        toggle_icon = soup.new_tag("i", attrs={"class": "material-icons"})
-        toggle_icon.string = "keyboard_arrow_down"
-        label.append(toggle_icon)
+        label.append(soup.new_tag("i", attrs={"class": "fa-solid fa-chevron-down"}))
         if "toctree-l0" in classes:
             # making label cover the whole caption text with css
             label["class"] = "label-parts"
@@ -309,6 +307,8 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
 
         # Remove sidebar links to sub-headers on the page
         for li in soup.select("li"):
+            if li.find("a", {"class": "current"}):
+                li.find("a")["class"].append("is-active")
             # Remove
             if li.find("a"):
                 href = li.find("a")["href"]
