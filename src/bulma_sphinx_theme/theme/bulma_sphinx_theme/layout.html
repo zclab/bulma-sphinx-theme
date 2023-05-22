@@ -36,8 +36,19 @@ titles_only=True)
         </article>
     </main>
 
-    <aside class="bulma-tocnav"></aside>
+    {% set page_toc = generate_toc_html() %}
+    {%- if page_toc | length >= 1 %}
+    <aside class="bulma-tocnav">
+        <div class="toc-wrapper toc-scroll">
+            {{ page_toc }}
+        </div>
+    </aside>
+    {% endif %}
 </div>
 {%- endblock mainbody -%}
+
+{% block footer %}
+{% include "sections/footer.html" %}
+{% endblock footer %}
 
 {%- endblock htmlbody %}
