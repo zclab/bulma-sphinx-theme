@@ -1,3 +1,7 @@
 .bulma-content {
   padding: 0 var(--docs-outer) var(--docs-outer) var(--docs-outer);
+
+  article {
+    overflow-wrap: break-word;
+  }
 }
