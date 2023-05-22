@@ -48,7 +48,9 @@ titles_only=True)
 {%- endblock mainbody -%}
 
 {% block footer %}
+{% if theme_footer %}
 {% include "sections/footer.html" %}
+{% endif %}
 {% endblock footer %}
 
 {%- endblock htmlbody %}
