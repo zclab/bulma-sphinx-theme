@@ -1,3 +1,5 @@
+@use "sass:math";
+
 html,
 body {
   height: 100%;
@@ -12,36 +14,48 @@ body {
   text-align: center;
 }
 
+// Header Styles
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: inherit;
+}
+
 h1 {
-  font-size: 4.2rem;
-  margin: 2.8rem 0 1.68rem;
+  font-size: $h1-fontsize;
+  line-height: 110%;
+  margin: math.div($h1-fontsize, 1.5) 0 math.div($h1-fontsize, 2.5) 0;
 }
 
 h2 {
-  font-size: 3.56rem;
-  margin: 2.3733333333rem 0 1.424rem;
+  font-size: $h2-fontsize;
+  line-height: 110%;
+  margin: math.div($h2-fontsize, 1.5) 0 math.div($h2-fontsize, 2.5) 0;
 }
 
 h3 {
-  font-size: 2.92rem;
-  margin: 1.9466666667rem 0 1.168rem;
+  font-size: $h3-fontsize;
+  line-height: 110%;
+  margin: math.div($h3-fontsize, 1.5) 0 math.div($h3-fontsize, 2.5) 0;
 }
 
 h4 {
-  font-size: 2.28rem;
-  margin: 1.52rem 0 0.912rem;
+  font-size: $h4-fontsize;
+  line-height: 110%;
+  margin: math.div($h4-fontsize, 1.5) 0 math.div($h4-fontsize, 2.5) 0;
 }
 
 h5 {
-  font-size: 1.64rem;
-  margin: 1.0933333333rem 0 0.656rem;
+  font-size: $h5-fontsize;
+  line-height: 110%;
+  margin: math.div($h5-fontsize, 1.5) 0 math.div($h5-fontsize, 2.5) 0;
 }
 
 h6 {
-  font-size: 1.15rem;
-  margin: 0.7666666667rem 0 0.46rem;
-}
-
-p {
-  margin: 0.7666666667rem 0 0.46rem;
+  font-size: $h6-fontsize;
+  line-height: 110%;
+  margin: math.div($h6-fontsize, 1.5) 0 math.div($h6-fontsize, 2.5) 0;
 }

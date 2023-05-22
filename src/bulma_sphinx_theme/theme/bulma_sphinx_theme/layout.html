@@ -22,28 +22,30 @@ titles_only=True)
 
 {%- block mainbody -%}
 <div class="bulma-main">
-    <div class="bulma-sidenav">
-        <div class="sidenav-viewport">
-            {% block left_sidebar %}
-            {%- include "sections/sidenav.html" -%}
-            {% endblock left_sidebar %}
+    <div class="main-wrapper">
+        <div class="bulma-sidenav is-hidden-mobile">
+            <div class="sidenav-viewport">
+                {% block left_sidebar %}
+                {%- include "sections/sidenav.html" -%}
+                {% endblock left_sidebar %}
+            </div>
         </div>
+
+        <main class="bulma-content">
+            <article role="main" class="container is-max-desktop">
+                {% block body %}{{ body }}{% endblock body %}
+            </article>
+
+            {% set page_toc = generate_toc_html() %}
+            {%- if page_toc | length >= 1 %}
+            <aside class="bulma-tocnav is-hidden-mobile">
+                <div class="toc-wrapper toc-scroll">
+                    {{ page_toc }}
+                </div>
+            </aside>
+            {% endif %}
+        </main>
     </div>
-
-    <main class="bulma-content">
-        <article role="main" class="container is-max-desktop">
-            {% block body %}{{ body }}{% endblock body %}
-        </article>
-    </main>
-
-    {% set page_toc = generate_toc_html() %}
-    {%- if page_toc | length >= 1 %}
-    <aside class="bulma-tocnav">
-        <div class="toc-wrapper toc-scroll">
-            {{ page_toc }}
-        </div>
-    </aside>
-    {% endif %}
 </div>
 {%- endblock mainbody -%}
 
