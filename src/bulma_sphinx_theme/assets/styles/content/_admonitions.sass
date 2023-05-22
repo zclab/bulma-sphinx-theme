@@ -65,7 +65,7 @@ p.topic-title
 
   @each $type, $value in $admonitions
     &.#{$type}
-      border-left-color: var(--color-admonition-title--#{$type})
+      background-color: var(--color-admonition-base--#{$type})
       > .admonition-title
         background-color: var(--color-admonition-title-background--#{$type})
         &::before

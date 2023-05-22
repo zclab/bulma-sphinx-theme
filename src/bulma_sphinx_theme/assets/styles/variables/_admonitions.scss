@@ -39,6 +39,7 @@ $admonitions: (
 
 @mixin admonitions {
   @each $name, $values in $admonitions {
+    --color-admonition-base--#{$name}: #{rgba(nth($values, 1), 0.05)};
     --color-admonition-title--#{$name}: #{nth($values, 1)};
     --color-admonition-title-background--#{$name}: #{rgba(
         nth($values, 1),
