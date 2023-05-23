@@ -4,6 +4,7 @@
   background-color: var(--color-sidenav-background);
   width: var(--sidenav-width);
   border-right: 1px solid var(--separator-color);
+  z-index: 100;
 
   .sidenav-viewport {
     height: 100%;
@@ -18,6 +19,12 @@
 
       nav.menu {
         padding-left: 15px;
+
+        p.caption {
+          font-weight: 700;
+          margin-top: 0.75rem;
+          margin-bottom: 0.5rem;
+        }
       }
     }
   }
