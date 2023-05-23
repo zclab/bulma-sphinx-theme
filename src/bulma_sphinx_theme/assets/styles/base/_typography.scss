@@ -64,3 +64,8 @@ p {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
 }
+
+/* the columns:last-child fix body height have a small gap to screen bottom */
+.columns:last-child {
+  margin-bottom: 0;
+}
