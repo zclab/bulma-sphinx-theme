@@ -7,4 +7,38 @@
     top: calc($navbar-height + 2rem);
     overflow: hidden;
   }
+
+  ul.table-of-contents {
+    li {
+      border-left: 1px solid var(--separator-color);
+
+      a {
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.56);
+        padding-left: 16px;
+        height: 1.6rem;
+        line-height: 1.5rem;
+      }
+
+      &.scroll-current > .reference {
+        border-left: 1px solid $link;
+        color: $link;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.toc-scroll {
+  .nav {
+    display: none;
+
+    &.visible {
+      display: block;
+    }
+
+    > .active > ul {
+      display: block;
+    }
+  }
 }

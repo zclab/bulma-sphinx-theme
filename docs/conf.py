@@ -56,12 +56,12 @@ html_css_files = [
 ]
 
 html_theme_options = {
-    "header_links_before_dropdown": 2,
+    "header_links_before_dropdown": 3,
     "header_icons": [
         {
             "name": "Github",
             "url": "https://github.com/zclab/bulma-sphinx-theme",
-            "fontawesome": "fa-brands fa-github",
+            "fontawesome": "fa-brands fa-lg fa-github",
         },
     ],
     "external_links": [
@@ -73,6 +73,10 @@ html_theme_options = {
         {
             "name": "Pydata sphinx theme",
             "url": "https://pydata-sphinx-theme.readthedocs.io/",
+        },
+        {
+            "name": "Hugging Face community",
+            "url": "https://huggingface.co/docs/transformers/index",
         },
     ],
 }
