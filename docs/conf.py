@@ -57,4 +57,22 @@ html_css_files = [
 
 html_theme_options = {
     "header_links_before_dropdown": 2,
+    "header_icons": [
+        {
+            "name": "Github",
+            "url": "https://github.com/zclab/bulma-sphinx-theme",
+            "fontawesome": "fa-brands fa-github",
+        },
+    ],
+    "external_links": [
+        {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
+        {
+            "name": "Sphinx book theme",
+            "url": "https://sphinx-book-theme.readthedocs.io/en/latest/",
+        },
+        {
+            "name": "Pydata sphinx theme",
+            "url": "https://pydata-sphinx-theme.readthedocs.io/",
+        },
+    ],
 }

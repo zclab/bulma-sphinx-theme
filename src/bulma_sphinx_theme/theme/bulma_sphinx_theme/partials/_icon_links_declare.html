@@ -1,0 +1,20 @@
+{#
+This is where user-provided CSS variables get converted into actual values.
+#}
+{% macro declare_icon_links(icon_list) -%}
+{% if icon_list -%}
+{% for icon_dict in icon_list -%}
+<a href="{{ icon_dict.url }}" target="_blank" title="{{ icon_dict.name }}" class="navbar-item ext-link">
+    {% if icon_dict.class %}
+    <i class="{{ icon_dict.class }}"></i>
+    {% elif icon_dict.material_icons %}
+    <i class="material-icons">{{ icon_dict.material_icons }}</i>
+    {% elif icon_dict.fontawesome %}
+    <i class="{{ icon_dict.fontawesome }}"></i>
+    {% elif icon_dict.image %}
+    <img src="{{ icon_dict.image }}" class="stm-icon-image" alt="{{ icon_dict.name }}" />
+    {% endif %}
+</a>
+{% endfor %}
+{%- endif %}
+{%- endmacro %}

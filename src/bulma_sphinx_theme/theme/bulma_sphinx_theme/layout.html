@@ -24,6 +24,10 @@ titles_only=True)
 {%- block mainbody -%}
 <div class="bulma-main">
     <div class="main-wrapper">
+        {% if theme_show_back_to_top %}
+        {%- include "components/back-to-top.html" -%}
+        {% endif %}
+
         {%- include "search-wrapper.html" -%}
 
         <div class="bulma-sidenav is-hidden-mobile">
