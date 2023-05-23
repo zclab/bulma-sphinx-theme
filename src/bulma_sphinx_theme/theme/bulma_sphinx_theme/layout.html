@@ -24,6 +24,8 @@ titles_only=True)
 {%- block mainbody -%}
 <div class="bulma-main">
     <div class="main-wrapper">
+        {%- include "search-wrapper.html" -%}
+
         <div class="bulma-sidenav is-hidden-mobile">
             <div class="sidenav-viewport">
                 {% block left_sidebar %}
