@@ -4,6 +4,9 @@
   background: linear-gradient(0.25turn, #b4d9e9, #ebf8e1, #ccd7f1);
 
   .button {
+    display: flex;
+    gap: 0.5rem;
+    border-radius: 2rem;
     width: 100%;
   }
 }
