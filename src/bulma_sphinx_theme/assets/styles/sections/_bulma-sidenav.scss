@@ -4,6 +4,7 @@
   background-color: var(--color-sidenav-background);
   width: var(--sidenav-width);
   border-right: 1px solid var(--separator-color);
+  margin-top: calc($navbar-height * -1 - 2px);
 
   .sidenav-viewport {
     height: 100%;
@@ -95,4 +96,11 @@
       transform: rotate(180deg);
     }
   }
+}
+
+.sidenav-brand {
+  display: flex;
+  flex-shrink: 0;
+  align-items: stretch;
+  min-height: $navbar-height;
 }
