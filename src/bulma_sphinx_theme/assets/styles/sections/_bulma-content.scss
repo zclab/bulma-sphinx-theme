@@ -8,5 +8,14 @@
     padding: 0 4rem 4rem;
     overflow-wrap: break-word;
     text-align: justify;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-align: left;
+    }
   }
 }
