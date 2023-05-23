@@ -15,7 +15,7 @@ titles_only=True)
 {% block htmlbody -%}
 
 {% block docs_headnav %}
-<nav class="navbar {% if theme_fix_navbar %} is-fixed-top {% endif %} {% if theme_navbar_style %} {{ theme_navbar_style }} {% endif %}"
+<nav class="navbar has-shadow {% if theme_fix_navbar %} is-fixed-top {% endif %} {% if theme_navbar_color_style %} {{ theme_navbar_color_style }} {% endif %}"
     role="navigation" aria-label="main navigation">
     {% include "sections/headnav.html" %}
 </nav>
@@ -24,6 +24,12 @@ titles_only=True)
 {%- block mainbody -%}
 <div class="bulma-main">
     <div class="main-wrapper">
+        {% if theme_show_back_to_top %}
+        {%- include "components/back-to-top.html" -%}
+        {% endif %}
+
+        {%- include "search-wrapper.html" -%}
+
         <div class="bulma-sidenav is-hidden-mobile">
             <div class="sidenav-viewport">
                 {% block left_sidebar %}

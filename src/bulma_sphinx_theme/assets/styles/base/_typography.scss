@@ -65,7 +65,13 @@ p {
   margin-bottom: 0.75rem;
 }
 
-/* the columns:last-child fix body height have a small gap to screen bottom */
-.columns:last-child {
-  margin-bottom: 0;
+.columns {
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+
+  /* the columns:last-child fix body height have a small gap to screen bottom */
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

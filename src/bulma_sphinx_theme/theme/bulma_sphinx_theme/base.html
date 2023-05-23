@@ -1,6 +1,8 @@
 <!doctype html>
 <html class="no-js {% if theme_fix_navbar %} has-navbar-fixed-top {% endif %}" {% if language is not none %}
     lang="{{ language }}" {% endif %}>
+{%- import "static/webpack-macros.html" as _webpack with context %}
+{%- import "partials/_icon_links_declare.html" as _icon_declare with context %}
 
 <head>
     {%- block site_meta -%}
@@ -75,6 +77,7 @@
     {%- block extra_styles %}
     {%- endblock extra_styles -%}
 
+    {{ _webpack.head_js_preload() }}
     {%- endblock styles -%}
 
     {#- Custom front matter #}
@@ -96,6 +99,7 @@
 
     {# Theme-related JavaScript code #}
     {%- block theme_scripts -%}
+    {{ _webpack.body_post() }}
     {%- endblock theme_scripts -%}
 
     {%- endblock scripts -%}

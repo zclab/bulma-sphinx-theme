@@ -1,16 +1,19 @@
 import hashlib
 import logging
+import os
 import sphinx.application
 from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List
 from sphinx.builders.html import StandaloneHTMLBuilder
+from sphinx.locale import get_translation
 from ._toctree import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
 __version__ = "0.0.0"
 logger = logging.getLogger(__name__)
+MESSAGE_CATALOG_NAME = "stmaterial"
 
 
 def _get_html_theme_path():
@@ -57,6 +60,9 @@ def _html_page_context(
 
     # Basic constants
     context["theme_version"] = __version__
+    # Translations
+    translation = get_translation(MESSAGE_CATALOG_NAME)
+    context["translate"] = translation
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
@@ -79,6 +85,9 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.add_html_theme("bulma_sphinx_theme", theme_dir)
     app.add_post_transform(ShortenLinkTransform)
     app.add_post_transform(WrapTableAndMathInAContainerTransform)
+    # Translations
+    locale_dir = os.path.join(theme_dir, "static", "locales")
+    app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.connect("html-page-context", _html_page_context)
     app.connect("html-page-context", add_toctree_functions)
