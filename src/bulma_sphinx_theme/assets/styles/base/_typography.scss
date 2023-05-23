@@ -1,0 +1,71 @@
+@use "sass:math";
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered {
+  text-align: center;
+}
+
+// Header Styles
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: $h1-fontsize;
+  line-height: 110%;
+  margin: math.div($h1-fontsize, 1.5) 0 math.div($h1-fontsize, 2.5) 0;
+}
+
+h2 {
+  font-size: $h2-fontsize;
+  line-height: 110%;
+  margin: math.div($h2-fontsize, 1.5) 0 math.div($h2-fontsize, 2.5) 0;
+}
+
+h3 {
+  font-size: $h3-fontsize;
+  line-height: 110%;
+  margin: math.div($h3-fontsize, 1.5) 0 math.div($h3-fontsize, 2.5) 0;
+}
+
+h4 {
+  font-size: $h4-fontsize;
+  line-height: 110%;
+  margin: math.div($h4-fontsize, 1.5) 0 math.div($h4-fontsize, 2.5) 0;
+}
+
+h5 {
+  font-size: $h5-fontsize;
+  line-height: 110%;
+  margin: math.div($h5-fontsize, 1.5) 0 math.div($h5-fontsize, 2.5) 0;
+}
+
+h6 {
+  font-size: $h6-fontsize;
+  line-height: 110%;
+  margin: math.div($h6-fontsize, 1.5) 0 math.div($h6-fontsize, 2.5) 0;
+}
+
+p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* the columns:last-child fix body height have a small gap to screen bottom */
+.columns:last-child {
+  margin-bottom: 0;
+}

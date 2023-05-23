@@ -54,3 +54,7 @@ todo_include_todos = True
 html_css_files = [
     "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
 ]
+
+html_theme_options = {
+    "header_links_before_dropdown": 2,
+}

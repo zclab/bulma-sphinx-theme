@@ -15,40 +15,47 @@ titles_only=True)
 {% block htmlbody -%}
 
 {% block docs_headnav %}
-<nav class="navbar" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top {% if theme_navbar_style %} {{ theme_navbar_style }} {% endif %}" role="navigation"
+    aria-label="main navigation">
     {% include "sections/headnav.html" %}
 </nav>
 {% endblock docs_headnav %}
 
 {%- block mainbody -%}
 <div class="bulma-main">
-    <div class="bulma-sidenav">
-        <div class="sidenav-viewport">
-            {% block left_sidebar %}
-            {%- include "sections/sidenav.html" -%}
-            {% endblock left_sidebar %}
+    <div class="main-wrapper">
+        <div class="bulma-sidenav is-hidden-mobile">
+            <div class="sidenav-viewport">
+                {% block left_sidebar %}
+                {%- include "sections/sidenav.html" -%}
+                {% endblock left_sidebar %}
+            </div>
         </div>
+
+        <main class="bulma-content">
+            <div class="columns">
+                <article role="main" class="column is-three-quarters article-container">
+                    {% block body %}{{ body }}{% endblock body %}
+                </article>
+
+                {% set page_toc = generate_toc_html() %}
+                {%- if page_toc | length >= 1 %}
+                <aside class="column is-one-quarter bulma-tocnav is-hidden-mobile">
+                    <div class="toc-wrapper toc-scroll">
+                        {{ page_toc }}
+                    </div>
+                </aside>
+                {% endif %}
+            </div>
+        </main>
     </div>
-
-    <main class="bulma-content">
-        <article role="main" class="container is-max-desktop">
-            {% block body %}{{ body }}{% endblock body %}
-        </article>
-    </main>
-
-    {% set page_toc = generate_toc_html() %}
-    {%- if page_toc | length >= 1 %}
-    <aside class="bulma-tocnav">
-        <div class="toc-wrapper toc-scroll">
-            {{ page_toc }}
-        </div>
-    </aside>
-    {% endif %}
 </div>
 {%- endblock mainbody -%}
 
 {% block footer %}
+{% if theme_footer %}
 {% include "sections/footer.html" %}
+{% endif %}
 {% endblock footer %}
 
 {%- endblock htmlbody %}

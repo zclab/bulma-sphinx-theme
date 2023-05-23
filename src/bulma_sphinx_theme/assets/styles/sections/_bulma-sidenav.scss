@@ -1,12 +1,22 @@
 .bulma-sidenav {
   display: block;
-  background-color: azure;
+  clip-path: inset(0);
+  background-color: var(--color-sidenav-background);
+  width: var(--sidenav-width);
+  border-right: 1px solid var(--separator-color);
 
   .sidenav-viewport {
     height: 100%;
     max-height: 100vh;
     position: sticky;
     top: 0;
+    padding-left: 15px;
+
+    .sidenav-drawer {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
   }
 }
 
