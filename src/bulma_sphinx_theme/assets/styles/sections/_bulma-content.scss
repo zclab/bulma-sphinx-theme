@@ -1,9 +1,12 @@
 .bulma-content {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
   width: calc(100% - var(--sidenav-width));
 
   article.article-container {
-    padding: 4rem;
+    padding: 0 4rem 4rem;
     overflow-wrap: break-word;
+    text-align: justify;
   }
 }

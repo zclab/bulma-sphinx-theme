@@ -33,22 +33,18 @@ titles_only=True)
 
         <main class="bulma-content">
             <div class="columns">
-                <div class="column is-three-quarters">
-                    <article role="main" class="article-container">
-                        {% block body %}{{ body }}{% endblock body %}
-                    </article>
-                </div>
+                <article role="main" class="column is-three-quarters article-container">
+                    {% block body %}{{ body }}{% endblock body %}
+                </article>
 
-                <div class="column is-one-quarter">
-                    {% set page_toc = generate_toc_html() %}
-                    {%- if page_toc | length >= 1 %}
-                    <aside class="bulma-tocnav is-hidden-mobile">
-                        <div class="toc-wrapper toc-scroll">
-                            {{ page_toc }}
-                        </div>
-                    </aside>
-                    {% endif %}
-                </div>
+                {% set page_toc = generate_toc_html() %}
+                {%- if page_toc | length >= 1 %}
+                <aside class="column is-one-quarter bulma-tocnav is-hidden-mobile">
+                    <div class="toc-wrapper toc-scroll">
+                        {{ page_toc }}
+                    </div>
+                </aside>
+                {% endif %}
             </div>
         </main>
     </div>
