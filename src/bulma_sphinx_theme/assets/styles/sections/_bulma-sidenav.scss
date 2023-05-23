@@ -11,12 +11,15 @@
     max-height: 100vh;
     position: sticky;
     top: 0;
-    padding-left: 15px;
 
     .sidenav-drawer {
       display: flex;
       flex-direction: column;
       height: 100%;
+
+      nav.menu {
+        padding-left: 15px;
+      }
     }
   }
 }
@@ -96,11 +99,4 @@
       transform: rotate(180deg);
     }
   }
-}
-
-.sidenav-brand {
-  display: flex;
-  flex-shrink: 0;
-  align-items: stretch;
-  min-height: $navbar-height;
 }
