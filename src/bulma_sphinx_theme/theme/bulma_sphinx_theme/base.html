@@ -1,5 +1,6 @@
 <!doctype html>
-<html class="no-js has-navbar-fixed-top" {% if language is not none %} lang="{{ language }}" {% endif %}>
+<html class="no-js {% if theme_fix_navbar %} has-navbar-fixed-top {% endif %}" {% if language is not none %}
+    lang="{{ language }}" {% endif %}>
 
 <head>
     {%- block site_meta -%}
