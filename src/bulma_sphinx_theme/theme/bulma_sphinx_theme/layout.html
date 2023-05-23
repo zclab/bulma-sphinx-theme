@@ -15,7 +15,8 @@ titles_only=True)
 {% block htmlbody -%}
 
 {% block docs_headnav %}
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top {% if theme_navbar_style %} {{ theme_navbar_style }} {% endif %}" role="navigation"
+    aria-label="main navigation">
     {% include "sections/headnav.html" %}
 </nav>
 {% endblock docs_headnav %}
