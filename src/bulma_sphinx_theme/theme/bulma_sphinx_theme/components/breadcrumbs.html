@@ -1,0 +1,29 @@
+{%- block breadcrumbs %}
+{#
+If we have more than 3 parents (excluding the home page) then we remove
+The ones in the middle and add an ellipsis.
+This code is from
+https://github.com/pydata/pydata-sphinx-theme/blob/main/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/components/breadcrumbs.html
+#}
+{% if parents|length>2 %}
+{% set parents=[parents[0], {"title": '<i class="fa-solid fa-ellipsis"></i>'}, parents[-1]] %}
+{% endif %}
+
+
+{#- Hide breadcrumbs on the home page #}
+{% if title and pagename != root_doc %}
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li><a href="{{ pathto(root_doc) }}">Home</a></li>
+        {%- for doc in parents %}
+        {% if doc.link %}
+        <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+        {% else %}
+        <li><a href="#">{{ doc.title }}</a></li>
+        {% endif %}
+        {%- endfor %}
+        <li><a class="is-active" aria-current="page">{{ title }}</a></li>
+    </ul>
+</nav>
+{% endif %}
+{%- endblock %}
