@@ -11,9 +11,9 @@ from ._toctree import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
-__version__ = "0.0.0"
+__version__ = "0.0.1.dev0"
 logger = logging.getLogger(__name__)
-MESSAGE_CATALOG_NAME = "stmaterial"
+MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
 
 def _get_html_theme_path():

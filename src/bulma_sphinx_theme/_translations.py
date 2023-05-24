@@ -37,7 +37,7 @@ def convert_json(folder=None):
                 / "locales"
                 / language
                 / "LC_MESSAGES"
-                / "bulma_sphinx_theme.po"  # noqa: E501
+                / "bulmasphinxtheme.po"  # noqa: E501
             )
             if not out_path.parent.exists():
                 out_path.parent.mkdir(parents=True)
@@ -45,7 +45,7 @@ def convert_json(folder=None):
                 header = f"""
 msgid ""
 msgstr ""
-"Project-Id-Version: bulma_sphinx_theme\\n"
+"Project-Id-Version: Bulma-sphinx-theme\\n"
 "MIME-Version: 1.0\\n"
 "Content-Type: text/plain; charset=UTF-8\\n"
 "Content-Transfer-Encoding: 8bit\\n"
@@ -61,18 +61,18 @@ msgstr ""
                 f.write(f'msgstr "{text}"\n')
 
     # compile mo
-    for path in (out_folder / "locales").glob("**/bulma_sphinx_theme.po"):
+    for path in (out_folder / "locales").glob("**/bulmasphinxthemepo"):
         print(path)
         subprocess.check_call(
             [
                 "msgfmt",
                 os.path.abspath(path),
                 "-o",
-                os.path.abspath(path.parent / "bulma_sphinx_theme.mo"),
+                os.path.abspath(path.parent / "bulmasphinxtheme.mo"),
             ]
         )
 
 
 if __name__ == "__main__":
-    print("[STM]: Compiling translations")
+    print("[BST]: Compiling translations")
     convert_json()
