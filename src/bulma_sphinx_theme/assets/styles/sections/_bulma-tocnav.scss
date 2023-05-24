@@ -9,12 +9,14 @@
   }
 
   ul.table-of-contents {
+    font-size: var(--toc-font-size);
+
     li {
-      border-left: 1px solid var(--separator-color);
+      border-left: 1px solid var(--color-background-border);
 
       a {
         display: inline-block;
-        color: rgba(0, 0, 0, 0.56);
+        color: var(--color-toc-title-text);
         padding-left: 16px;
         height: 1.6rem;
         line-height: 1.5rem;
@@ -41,4 +43,9 @@
       display: block;
     }
   }
+}
+
+.toc-title {
+  padding-left: 16px;
+  font-size: var(--toc-title-font-size);
 }

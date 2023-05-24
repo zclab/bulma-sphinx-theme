@@ -48,6 +48,11 @@ titles_only=True)
                 {%- if page_toc | length >= 1 %}
                 <aside class="column is-one-quarter bulma-tocnav is-hidden-mobile">
                     <div class="toc-wrapper toc-scroll">
+                        {% if theme_toc_title %}
+                        <div class="toc-title">
+                            <i class="fa-solid fa-list"></i> {{ theme_toc_title }}
+                        </div>
+                        {% endif %}
                         {{ page_toc }}
                     </div>
                 </aside>
