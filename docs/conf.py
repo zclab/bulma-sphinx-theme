@@ -23,6 +23,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_subfigure",
+    "bulma_sphinx_theme.demo.sphinxext",
 ]
 
 

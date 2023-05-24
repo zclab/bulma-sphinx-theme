@@ -1,15 +1,5 @@
 <footer class="footer">
-    <div class="container">
-        <div class="columns">
-            <div class="column is-4">
-                Column 1
-            </div>
-            <div class="column is-4">
-                Column 2
-            </div>
-            <div class="column is-4">
-                Column 3
-            </div>
-        </div>
-    </div>
+    {%- for footer_section in theme_footer %}
+    {%- include footer_section %}
+    {%- endfor %}
 </footer>

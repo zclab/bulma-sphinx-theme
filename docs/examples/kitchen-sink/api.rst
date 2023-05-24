@@ -25,6 +25,9 @@ Using Sphinx's :any:`sphinx.ext.autodoc` plugin, it is possible to auto-generate
         # Don't show class signature with the class' name.
         autodoc_class_signature = "separated"
 
+.. automodule:: bulma_sphinx_theme.demo.module
+    :members:
+
 C inline signature
 ------------------
 

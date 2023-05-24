@@ -74,7 +74,47 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
 
 def _update_config(app: sphinx.application.Sphinx) -> None:
-    get_theme_options(app)
+    theme_options = get_theme_options(app)
+
+    # Add an analytics ID to the site if provided
+    analytics = theme_options.get("analytics", {})
+    if analytics:
+        # Google Analytics
+        gid = analytics.get("google_analytics_id")
+
+        if gid:
+            gid_js_path = f"https://www.googletagmanager.com/gtag/js?id={gid}"
+            gid_script = f"""
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){{ dataLayer.push(arguments); }}
+                gtag('js', new Date());
+                gtag('config', '{gid}');
+            """
+
+            # Link the JS files
+            app.add_js_file(gid_js_path, loading_method="async")
+            app.add_js_file(None, body=gid_script)
+
+
+def update_and_remove_templates(
+    app: sphinx.application.Sphinx, pagename: str, templatename: str, context, doctree
+) -> None:
+    template_sections = [
+        "theme_footer",
+    ]
+
+    for section in template_sections:
+        if context.get(section):
+            # Break apart `,` separated strings so we can use , in the defaults
+            if isinstance(context.get(section), str):
+                context[section] = [
+                    ii.strip() for ii in context.get(section).split(",")
+                ]
+
+            # Add `.html` to templates with no suffix
+            for ii, template in enumerate(context.get(section)):
+                if not os.path.splitext(template)[1]:
+                    context[section][ii] = template + ".html"
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
@@ -90,6 +130,7 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.connect("html-page-context", _html_page_context)
+    app.connect("html-page-context", update_and_remove_templates)
     app.connect("html-page-context", add_toctree_functions)
     app.connect("builder-inited", _builder_inited)
     app.connect("builder-inited", _update_config)
