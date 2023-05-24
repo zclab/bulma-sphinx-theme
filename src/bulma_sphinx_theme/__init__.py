@@ -101,6 +101,10 @@ def update_and_remove_templates(
 ) -> None:
     template_sections = [
         "theme_footer",
+        "theme_article_top_left",
+        "theme_article_top_right",
+        "theme_article_bottom_left",
+        "theme_article_bottom_right",
     ]
 
     for section in template_sections:

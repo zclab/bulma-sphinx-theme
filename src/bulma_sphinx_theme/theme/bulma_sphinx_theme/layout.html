@@ -41,7 +41,10 @@ titles_only=True)
         <main class="bulma-content">
             <div class="columns">
                 <article role="main" class="column is-three-quarters article-container">
+                    {% include "sections/article-top.html" %}
+                    {% include "components/searchbox.html" %}
                     {% block body %}{{ body }}{% endblock body %}
+                    {% include "sections/article-bottom.html" %}
                 </article>
 
                 {% set page_toc = generate_toc_html() %}

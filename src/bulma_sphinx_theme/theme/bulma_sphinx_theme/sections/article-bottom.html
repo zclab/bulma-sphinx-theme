@@ -1,0 +1,19 @@
+{% if theme_article_bottom_left or theme_article_bottom_right %}
+<div class="level bulma-article-bottom">
+    <div class="level-left">
+        {% if theme_article_bottom_left %}
+        {%- for bottom_left in theme_article_bottom_left %}
+        {%- include bottom_left %}
+        {%- endfor %}
+        {% endif %}
+    </div>
+
+    <div class="level-right">
+        {% if theme_article_bottom_right %}
+        {%- for bottom_right in theme_article_bottom_right %}
+        {%- include bottom_right %}
+        {%- endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endif %}
