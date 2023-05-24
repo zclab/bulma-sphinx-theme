@@ -2,9 +2,21 @@
   --primary-color: #26a69a;
   --separator-color: #dddddd;
   --background-color: #ffffff;
+  --color-problematic: #b30000;
   --color-sidenav-background: aliceblue;
   --color-highlight-on-target: #ffffcc;
   --color-highlighted-background: rgba(0, 0, 0, 0.12);
   --color-highlighted-text: #ff7b78;
   --color-background-border: #eeebee;
+  --color-inline-code-background: #f5f5f5;
+
+  // API documentation
+  --color-api-background: #efeff400;
+  --color-api-background-hover: #efeff4ff;
+  --color-api-overall: #5a5c63;
+  --color-api-name: var(--color-problematic);
+  --color-api-pre-name: var(--color-problematic);
+  --color-api-paren: #5a5c63;
+  --color-api-keyword: var(--color-foreground-primary);
+  --color-highlight-on-target: black;
 }
