@@ -14,6 +14,12 @@
   --color-background-border: #dddddd; // for UI borders
   --color-background-item: #ccc; // for "background" items (eg: copybutton)
   --color-background-sidenav: aliceblue;
+  --color-background-panel: linear-gradient(
+    0.25turn,
+    #e3e5f7,
+    #d9e1ef,
+    #e8ebfb
+  );
 
   // Announcements
   --color-announcement-background: #000000dd;

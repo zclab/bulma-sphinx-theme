@@ -209,10 +209,10 @@ var addEventListenerForSearchKeyboard = () => {
  * Change the search hint to `meta key` if we are a Mac
  */
 var changeSearchShortcutKey = () => {
-  let forms = document.querySelectorAll("form.search-wrapper");
+  let buttons = document.querySelectorAll("button.search-button");
   var isMac = window.navigator.platform.toUpperCase().indexOf("MAC") >= 0;
   if (isMac) {
-    forms.forEach(
+    buttons.forEach(
       (f) => (f.querySelector("kbd.kbd-shortcut__modifier").innerText = "⌘"),
     );
   }
