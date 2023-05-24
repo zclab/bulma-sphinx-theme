@@ -4,7 +4,6 @@
   --background-color: #ffffff;
   --color-problematic: #b30000;
   --color-sidenav-background: aliceblue;
-  --color-highlight-on-target: #ffffcc;
   --color-highlighted-background: rgba(0, 0, 0, 0.12);
   --color-highlighted-text: #ff7b78;
   --color-background-border: #eeebee;
@@ -18,5 +17,5 @@
   --color-api-pre-name: var(--color-problematic);
   --color-api-paren: #5a5c63;
   --color-api-keyword: var(--color-foreground-primary);
-  --color-highlight-on-target: black;
+  --color-highlight-on-target: #ffffcc;
 }
