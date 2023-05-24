@@ -81,4 +81,8 @@ html_theme_options = {
             "url": "https://huggingface.co/docs/transformers/index",
         },
     ],
+    "source_repository": "https://github.com/zclab/bulma-sphinx-theme",
+    "source_branch": "main",
+    "source_directory": "docs/",
+    "use_edit_page_button": True,
 }
