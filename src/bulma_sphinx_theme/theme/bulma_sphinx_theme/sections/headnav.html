@@ -1,5 +1,5 @@
 <div class="navbar-brand">
-    <a class="navbar-item" href="/">
+    <a class="navbar-item" href="{{ pathto(root_doc) }}">
         <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" alt="brand-logo" />
     </a>
 
@@ -12,10 +12,18 @@
 
 <div class="navbar-menu">
     <div class="navbar-start">
-        {{ head_nav_html }}
+        {% if theme_navbar_start %}
+        {%- for ns_section in theme_navbar_start %}
+        {%- include ns_section %}
+        {%- endfor %}
+        {% endif %}
     </div>
 
     <div class="navbar-end">
-        {{ _icon_declare.declare_icon_links(theme_header_icons) }}
+        {% if theme_navbar_end %}
+        {%- for ne_section in theme_navbar_end %}
+        {%- include ne_section %}
+        {%- endfor %}
+        {% endif %}
     </div>
 </div>

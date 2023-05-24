@@ -11,9 +11,9 @@ from ._toctree import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
-__version__ = "0.0.0"
+__version__ = "0.0.1.dev0"
 logger = logging.getLogger(__name__)
-MESSAGE_CATALOG_NAME = "stmaterial"
+MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
 
 def _get_html_theme_path():
@@ -101,6 +101,13 @@ def update_and_remove_templates(
 ) -> None:
     template_sections = [
         "theme_footer",
+        "theme_article_top_left",
+        "theme_article_top_right",
+        "theme_article_bottom_left",
+        "theme_article_bottom_right",
+        "theme_navbar_start",
+        "theme_navbar_end",
+        "sidebars",
     ]
 
     for section in template_sections:

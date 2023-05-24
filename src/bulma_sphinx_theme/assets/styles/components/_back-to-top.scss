@@ -11,7 +11,7 @@
   border-radius: 1.2rem;
   font-size: 1rem;
 
-  background: var(--background-color);
+  background: var(--color-background-primary);
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.05), #6b728080 0px 0px 1px 0px;
 
   z-index: 10;
@@ -41,7 +41,7 @@ a.back-to-top {
 
   &:hover {
     text-decoration: none;
-    background: var(--primary-color);
+    background: var(--color-brand-primary);
     color: white;
   }
 }

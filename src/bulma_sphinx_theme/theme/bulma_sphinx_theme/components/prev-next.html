@@ -1,0 +1,23 @@
+{%- if prev or next %}
+<div class="prev-next">
+    {%- if prev %}
+    <a class="pre-next__link pre-next__link--prev" href="{{ prev.link|e }}" title="{{ _('previous page') }}">
+        <div class="pre-next__link__sublabel">
+            <p>{{ _("previous") }}</p>
+        </div>
+        <div class="pre-next__link__label">{{ prev_title or prev.title }}</div>
+    </a>
+    {%- endif %}
+
+    {%- if next %}
+    <a class="pre-next__link pre-next__link--next" href="{{ next.link|e }}" title="{{ _('next page') }}">
+        <div class="pre-next__link__sublabel">
+            <p>{{ _("next") }}</p>
+        </div>
+        <div class="pre-next__link__label">
+            {{ next_title or next.title }}
+        </div>
+    </a>
+    {%- endif %}
+</div>
+{%- endif %}

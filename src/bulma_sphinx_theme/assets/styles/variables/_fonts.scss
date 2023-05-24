@@ -1,8 +1,36 @@
+// Fonts used by this theme.
+//
+// There are basically two things here -- using the system font stack and
+// defining sizes for various elements in %ages. We could have also used `em`
+// but %age is easier to reason about for me.
+
 @mixin fonts {
+  --font-stack: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial,
+    sans-serif;
+  --font-stack--monospace: monospace;
+
+  --font-size--normal: 100%;
   --font-size--small: 90%;
   --font-size--small--2: 83.75%;
   --font-size--small--3: 77.5%;
   --font-size--small--4: 65%;
+
+  // Sidebar
+  --sidebar-caption-font-size: var(--font-size--small--2);
+  --sidebar-item-font-size: var(--font-size--small);
+  --sidebar-search-input-font-size: var(--font-size--small);
+
+  // Table of Contents
+  --toc-font-size: var(--font-size--small);
+  --toc-font-size--mobile: var(--font-size--normal);
+  --toc-title-font-size: var(--font-size--small--2);
+
+  // Admonitions
+  //
+  // These aren't defined in terms of %ages, since nesting these is permitted.
+  --admonition-font-size: 1em;
+  --admonition-title-font-size: 1em;
 
   // Code
   --code-font-size: var(--font-size--small);

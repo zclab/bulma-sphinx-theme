@@ -80,5 +80,13 @@ html_theme_options = {
             "name": "Hugging Face community",
             "url": "https://huggingface.co/docs/transformers/index",
         },
+        {
+            "name": " Docusaurus",
+            "url": "https://docusaurus.io/",
+        },
     ],
+    "source_repository": "https://github.com/zclab/bulma-sphinx-theme",
+    "source_branch": "main",
+    "source_directory": "docs/",
+    "use_edit_page_button": True,
 }

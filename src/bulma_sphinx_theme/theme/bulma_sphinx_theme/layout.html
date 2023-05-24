@@ -41,27 +41,38 @@ titles_only=True)
         <main class="bulma-content">
             <div class="columns">
                 <article role="main" class="column is-three-quarters article-container">
+                    {% include "sections/article-top.html" %}
+                    {% include "components/searchbox.html" %}
+
                     {% block body %}{{ body }}{% endblock body %}
+
+                    {% include "sections/article-bottom.html" %}
+                    {% include "components/prev-next.html" %}
                 </article>
 
                 {% set page_toc = generate_toc_html() %}
                 {%- if page_toc | length >= 1 %}
                 <aside class="column is-one-quarter bulma-tocnav is-hidden-mobile">
                     <div class="toc-wrapper toc-scroll">
+                        {% if theme_toc_title %}
+                        <div class="toc-title">
+                            <i class="fa-solid fa-list"></i> {{ theme_toc_title }}
+                        </div>
+                        {% endif %}
                         {{ page_toc }}
                     </div>
                 </aside>
                 {% endif %}
             </div>
+
+            {% block footer %}
+            {% if theme_footer %}
+            {% include "sections/footer.html" %}
+            {% endif %}
+            {% endblock footer %}
         </main>
     </div>
 </div>
 {%- endblock mainbody -%}
-
-{% block footer %}
-{% if theme_footer %}
-{% include "sections/footer.html" %}
-{% endif %}
-{% endblock footer %}
 
 {%- endblock htmlbody %}

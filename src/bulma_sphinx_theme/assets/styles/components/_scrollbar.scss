@@ -1,0 +1,18 @@
+nav.menu,
+.toc-wrapper,
+.table-wrapper,
+pre,
+code {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-foreground-border) transparent;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-foreground-border);
+    border-radius: 0.125rem;
+  }
+}

@@ -1,9 +1,9 @@
 .bulma-sidenav {
   display: block;
   clip-path: inset(0);
-  background-color: var(--color-sidenav-background);
+  background-color: var(--color-background-sidenav);
   width: var(--sidenav-width);
-  border-right: 1px solid var(--separator-color);
+  border-right: 1px solid var(--color-background-border);
   z-index: 100;
 
   .sidenav-viewport {
@@ -19,6 +19,7 @@
 
       nav.menu {
         padding-left: 15px;
+        overflow: auto;
 
         p.caption {
           font-weight: 700;
