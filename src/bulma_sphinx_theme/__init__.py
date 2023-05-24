@@ -105,6 +105,9 @@ def update_and_remove_templates(
         "theme_article_top_right",
         "theme_article_bottom_left",
         "theme_article_bottom_right",
+        "theme_navbar_start",
+        "theme_navbar_end",
+        "sidebars",
     ]
 
     for section in template_sections:

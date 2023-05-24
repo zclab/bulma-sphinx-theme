@@ -43,8 +43,11 @@ titles_only=True)
                 <article role="main" class="column is-three-quarters article-container">
                     {% include "sections/article-top.html" %}
                     {% include "components/searchbox.html" %}
+
                     {% block body %}{{ body }}{% endblock body %}
+
                     {% include "sections/article-bottom.html" %}
+                    {% include "components/prev-next.html" %}
                 </article>
 
                 {% set page_toc = generate_toc_html() %}
