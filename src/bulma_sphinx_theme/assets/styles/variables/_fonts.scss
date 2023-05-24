@@ -1,0 +1,12 @@
+@mixin fonts {
+  --font-size--small: 90%;
+  --font-size--small--2: 83.75%;
+  --font-size--small--3: 77.5%;
+  --font-size--small--4: 65%;
+
+  // Code
+  --code-font-size: var(--font-size--small);
+
+  // API
+  --api-font-size: var(--font-size--small);
+}
