@@ -18,7 +18,7 @@
 
 <!-- end badges -->
 
-## Installation and usage
+## Get started
 
 <!-- start quickstart -->
 
