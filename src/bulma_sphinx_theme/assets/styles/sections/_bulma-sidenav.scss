@@ -23,6 +23,13 @@
         padding-left: 15px;
         overflow: auto;
 
+        .menu-list a.is-active {
+          background-color: var(--color-active-background);
+          color: var(--color-active-text-foreground);
+          border-left: 1px solid;
+          font-weight: 600;
+        }
+
         p.caption {
           font-weight: 700;
           margin-top: 0.75rem;
