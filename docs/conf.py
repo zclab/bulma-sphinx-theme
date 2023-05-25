@@ -61,6 +61,7 @@ html_css_files = [
 html_theme_options = {
     "header_links_before_dropdown": 3,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
+    "logo": {"text": "Bulma Sphinx", "logo": "_static/logo-.png"},
     "header_icons": [
         {
             "name": "Github",
@@ -98,4 +99,6 @@ html_theme_options = {
     "source_directory": "docs/",
     "use_edit_page_button": True,
     "fix_navbar": True,
+    "navbar_start": [],
+    "navbar_end": ["navbar-nav.html", "header-icons.html"],
 }
