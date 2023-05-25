@@ -72,6 +72,7 @@
 
     {#- Theme-related stylesheets -#}
     {%- block theme_styles %}
+    {% include "partials/_css_variables_define.html" with context %}
     {%- endblock theme_styles -%}
 
     {%- block extra_styles %}

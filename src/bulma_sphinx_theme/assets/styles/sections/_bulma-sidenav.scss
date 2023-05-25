@@ -4,7 +4,9 @@
   background-color: var(--color-background-sidenav);
   width: var(--sidenav-width);
   border-right: 1px solid var(--color-background-border);
-  z-index: 100;
+  margin-top: calc(
+    var(--navbar-height) * var(--sidenav-sticky-top-factor) * -1
+  );
 
   .sidenav-viewport {
     height: 100%;

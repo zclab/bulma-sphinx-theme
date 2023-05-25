@@ -1,0 +1,20 @@
+{#
+This is where user-provided CSS variables get converted into actual values.
+#}
+{% macro define_css_variables(user_customisations, fixed_navbar) -%}
+{% if fixed_navbar %}
+--sidenav-sticky-top-factor: 1;
+{% endif %}
+{% if user_customisations -%}
+{% for name, value in user_customisations.items() -%}
+--{{ name }}: {{ value }};
+{% endfor %}
+{%- endif %}
+{%- endmacro %}
+
+
+<style>
+    :root {
+            {{ define_css_variables(theme_css_variables, theme_fix_navbar) }}
+    }
+</style>

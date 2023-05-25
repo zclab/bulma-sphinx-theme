@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 1.5rem 1rem 1rem 1rem;
+  padding: var(--top-content-to-navbar-gap) 1rem 1rem 1rem;
   background: var(--color-background-panel);
 
-  .button {
-    display: flex;
-    gap: 0.5rem;
-    border-radius: 1.5rem;
-    width: 100%;
-    font-size: 0.8rem;
-    justify-content: space-between;
+  .level:not(:last-child) {
+    margin-bottom: 0;
+  }
+
+  button.search-button {
+    border-radius: 1.2rem;
+    font-size: 0.92rem;
   }
 }

@@ -1,12 +1,17 @@
-<button class="button is-fullwidth search-button search-button__button">
-    <div>
-        <svg class="flex-none mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            aria-hidden="true" focusable="false" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 32 32">
-            <path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z"
-                fill="currentColor" />
-        </svg>
-        <span>Search docs..</span>
+<button class="button is-fullwidth search-button search-button__button level">
+    <div class="level-left">
+        <div class="level-item">
+            <svg class="flex-none mr-1.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                aria-hidden="true" focusable="false" role="img" width="1em" height="1em"
+                preserveAspectRatio="xMidYMid meet" viewBox="0 0 32 32">
+                <path d="M30 28.59L22.45 21A11 11 0 1 0 21 22.45L28.59 30zM5 14a9 9 0 1 1 9 9a9 9 0 0 1-9-9z"
+                    fill="currentColor" />
+            </svg>
+        </div>
+        <span class="level-item">{{ theme_search_bar_text }}</span>
     </div>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+    <div class="level-right">
+        <span class="search-button__kbd-shortcut level-item"><kbd
+                class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+    </div>
 </button>
