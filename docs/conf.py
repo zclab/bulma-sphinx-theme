@@ -49,7 +49,7 @@ html_theme = "bulma_sphinx_theme"
 html_title = "A sphinx theme on bulma"
 html_favicon = "_static/favicon.png"
 html_last_updated_fmt = ""
-html_logo = "_static/logo-.png"
+html_logo = "_static/logo.svg"
 html_show_sourcelink = True
 
 todo_include_todos = True
@@ -62,7 +62,7 @@ html_css_files = [
 html_theme_options = {
     "header_links_before_dropdown": 3,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
-    "logo": {"text": "Bulma Sphinx", "logo": "_static/logo-.png"},
+    "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "header_icons": [
         {
             "name": "Github",
@@ -99,7 +99,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "use_edit_page_button": True,
-    "fix_navbar": True,
+    "fix_navbar": False,
     "navbar_start": [],
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
 }
