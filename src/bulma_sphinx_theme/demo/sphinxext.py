@@ -78,7 +78,7 @@ def _translate_into_tab_demo(block_text: str) -> StringList:
     return string_list
 
 
-class _STMbDemoDirective(SphinxDirective):
+class _BULMASPHINXDemoDirective(SphinxDirective):
     has_content = True
 
     def run(self) -> Any:
@@ -92,4 +92,4 @@ class _STMbDemoDirective(SphinxDirective):
 
 def setup(app: Sphinx) -> None:
     """For setting up the directive."""
-    app.add_directive("bulma-demo", _STMbDemoDirective)
+    app.add_directive("bulma-demo", _BULMASPHINXDemoDirective)

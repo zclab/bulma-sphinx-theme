@@ -65,7 +65,7 @@ html_theme_options = {
         {
             "name": "Github",
             "url": "https://github.com/zclab/bulma-sphinx-theme",
-            "fontawesome": "fa-brands fa-lg fa-github",
+            "image": "https://www.svgrepo.com/show/433505/github-o.svg",
         },
         {
             "name": "Bulma",
