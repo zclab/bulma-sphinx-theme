@@ -20,6 +20,7 @@ extensions = [
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
     "myst_parser",
+    "sphinx_tippy",
     "sphinx_inline_tabs",
     "sphinx_design",
     "sphinx_copybutton",
@@ -102,3 +103,14 @@ html_theme_options = {
     "navbar_start": [],
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
 }
+
+## Sphinx Tippy configuration, see https://sphinx-tippy.readthedocs.io/en/latest/
+# tippy_props = {"interactive": True}
+tippy_tip_selector = (
+    "figure, table, img, p, aside, div.admonition, div.literal-block-wrapper, div.math"
+)
+tippy_anchor_parent_selector = "article.article-container"
+
+tippy_enable_wikitips = False
+tippy_enable_doitips = False
+tippy_enable_mathjax = True
