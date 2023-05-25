@@ -1,6 +1,6 @@
 .back-to-top {
   text-decoration: none;
-  top: calc($navbar-height + 1.5rem);
+  top: calc(var(--navbar-height) + var(--top-content-to-navbar-gap));
 
   display: none;
   position: fixed;

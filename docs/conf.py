@@ -1,12 +1,14 @@
 import sys
+import datetime
 from os.path import abspath, join, dirname
 import bulma_sphinx_theme
 
 sys.path.insert(0, abspath(join(dirname(__file__), "../src")))
 
 project = "A sphinx theme based on bulma"
-copyright = "2023"
 author = "zclab"
+year = str(datetime.date.today().year)
+copyright = year + " " + author
 master_doc = "index"
 version = bulma_sphinx_theme.__version__
 language = "en"  #'zh_CN'
@@ -89,4 +91,5 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "use_edit_page_button": True,
+    "fix_navbar": True,
 }
