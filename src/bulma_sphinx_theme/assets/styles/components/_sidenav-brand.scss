@@ -1,3 +1,5 @@
 .sidenav-brand {
   min-height: var(--navbar-height);
+  max-height: var(--navbar-height);
+  overflow: hidden;
 }

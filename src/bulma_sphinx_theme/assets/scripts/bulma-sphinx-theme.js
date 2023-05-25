@@ -119,7 +119,7 @@ function setupScrollSpy() {
     events: true,
     offset: () => {
       let rem = parseFloat(getComputedStyle(document.documentElement).fontSize);
-      return header.getBoundingClientRect().height + 0.5 * rem + 1;
+      return header.getBoundingClientRect().height + 1.0 * rem + 1;
     },
   });
 }
