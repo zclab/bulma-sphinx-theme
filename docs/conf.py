@@ -65,7 +65,17 @@ html_theme_options = {
         {
             "name": "Github",
             "url": "https://github.com/zclab/bulma-sphinx-theme",
-            "fontawesome": "fa-brands fa-lg fa-github",
+            "image": "https://www.svgrepo.com/show/433505/github-o.svg",
+        },
+        {
+            "name": "Bulma",
+            "url": "https://bulma.io/",
+            "image": "https://bulma.io/favicons/favicon.ico",
+        },
+        {
+            "name": "Pydata",
+            "url": "https://pydata-sphinx-theme.readthedocs.io/en/latest/",
+            "image": "https://pydata-sphinx-theme.readthedocs.io/en/latest/_static/pydata-logo.png",
         },
     ],
     "external_links": [
@@ -73,10 +83,6 @@ html_theme_options = {
         {
             "name": "Sphinx book theme",
             "url": "https://sphinx-book-theme.readthedocs.io/en/latest/",
-        },
-        {
-            "name": "Pydata sphinx theme",
-            "url": "https://pydata-sphinx-theme.readthedocs.io/",
         },
         {
             "name": "Hugging Face community",
