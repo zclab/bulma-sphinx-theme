@@ -61,6 +61,7 @@ html_css_files = [
 html_theme_options = {
     "header_links_before_dropdown": 3,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
+    "logo": {"text": "Bulma Sphinx", "logo": "_static/logo-.png"},
     "header_icons": [
         {
             "name": "Github",
