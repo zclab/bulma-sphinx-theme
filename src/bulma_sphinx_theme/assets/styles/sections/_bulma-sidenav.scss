@@ -4,12 +4,15 @@
   background-color: var(--color-background-sidenav);
   width: var(--sidenav-width);
   border-right: 1px solid var(--color-background-border);
+  margin-top: calc(
+    var(--navbar-height) * var(--sidenav-sticky-top-factor) * -1
+  );
 
   .sidenav-viewport {
     height: 100%;
     max-height: 100vh;
     position: sticky;
-    top: calc(var(--sidenav-sticky-top-factor) * var(--navbar-height));
+    top: 0;
 
     .sidenav-drawer {
       display: flex;
