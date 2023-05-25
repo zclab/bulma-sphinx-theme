@@ -1,0 +1,6 @@
+<a class="navbar-item" href="{{ pathto(root_doc) }}">
+    <img src="{{ logo_url }}" alt="brand-logo" />
+    {% if theme_logo and theme_logo.get("text") %}
+    <span class="brand-logo-text">{{ theme_logo.get("text") }}</span>
+    {%- endif %}
+</a>
