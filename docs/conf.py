@@ -67,16 +67,22 @@ html_theme_options = {
             "url": "https://github.com/zclab/bulma-sphinx-theme",
             "fontawesome": "fa-brands fa-lg fa-github",
         },
+        {
+            "name": "Bulma",
+            "url": "https://bulma.io/",
+            "image": "https://bulma.io/favicons/favicon.ico",
+        },
+        {
+            "name": "Pydata",
+            "url": "https://pydata-sphinx-theme.readthedocs.io/en/latest/",
+            "image": "https://pydata-sphinx-theme.readthedocs.io/en/latest/_static/pydata-logo.png",
+        },
     ],
     "external_links": [
         {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
         {
             "name": "Sphinx book theme",
             "url": "https://sphinx-book-theme.readthedocs.io/en/latest/",
-        },
-        {
-            "name": "Pydata sphinx theme",
-            "url": "https://pydata-sphinx-theme.readthedocs.io/",
         },
         {
             "name": "Hugging Face community",
