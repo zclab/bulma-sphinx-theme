@@ -12,11 +12,11 @@
     font-size: var(--toc-font-size);
 
     li {
-      border-left: 1px solid var(--color-background-border);
+      border-left: 1px solid var(--bst-color-border);
 
       a {
         display: inline-block;
-        color: var(--color-toc-title-text);
+        color: var(--bst-color-text-base);
         padding-left: 16px;
         height: 1.6rem;
         line-height: 1.5rem;

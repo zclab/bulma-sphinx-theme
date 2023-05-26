@@ -1,0 +1,12 @@
+span.guilabel {
+  border: 1px solid var(--bst-color-info);
+  color: var(--bst-color-info);
+  font-size: 80%;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 2.4px 6px;
+  margin: auto 2px;
+  position: relative;
+
+  @include background-from-color-variable(--bst-color-info);
+}

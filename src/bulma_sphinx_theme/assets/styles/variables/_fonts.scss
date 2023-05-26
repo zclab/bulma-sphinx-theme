@@ -1,10 +1,4 @@
-// Fonts used by this theme.
-//
-// There are basically two things here -- using the system font stack and
-// defining sizes for various elements in %ages. We could have also used `em`
-// but %age is easier to reason about for me.
-
-@mixin fonts {
+html {
   --font-stack: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, Arial,
     sans-serif;
@@ -37,4 +31,7 @@
 
   // API
   --api-font-size: var(--font-size--small);
+
+  // Admonition styles
+  --bst-admonition-font-weight-heading: 600;
 }

@@ -42,7 +42,7 @@ span:target ~ // Non-regular span[id] style "extra" anchors
   h5,
   h6
     &:nth-of-type(1)
-      background-color: var(--color-highlight-on-target)
+      background-color: var(--bst-color-target)
       // .headerlink
       //   visibility: visible
       code.literal
@@ -50,30 +50,30 @@ span:target ~ // Non-regular span[id] style "extra" anchors
 
 table:target > caption,
 figure:target
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)
 
 // Inline page contents
 .this-will-duplicate-information-and-it-is-still-useful-here li :target
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)
 
 // Code block permalinks
 .literal-block-wrapper:target .code-block-caption
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)
 
 // When a definition list item is selected
 //
 //   There isn't really an alternative to !important here, due to the
 //   high-specificity of API documentation's selector.
 dt:target
-  background-color: var(--color-highlight-on-target) !important
+  background-color: var(--bst-color-target) !important
 
 // When a footnote reference is selected
 .footnote > dt:target + dd,
 .footnote-reference:target
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)
 
 aside.footnote:target
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)
 
 div.citation:target
-  background-color: var(--color-highlight-on-target)
+  background-color: var(--bst-color-target)

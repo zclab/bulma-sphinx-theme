@@ -1,9 +1,9 @@
 .bulma-sidenav {
   display: block;
   clip-path: inset(0);
-  background-color: var(--color-background-sidenav);
+  background-color: var(--bst-color-background-sidenav);
   width: var(--sidenav-width);
-  border-right: 1px solid var(--color-background-border);
+  border-right: 1px solid var(--bst-color-border);
   margin-top: calc(
     var(--navbar-height) * var(--sidenav-sticky-top-factor) * -1
   );
@@ -24,8 +24,8 @@
         overflow: auto;
 
         .menu-list a.is-active {
-          background-color: var(--color-active-background);
-          color: var(--color-active-text-foreground);
+          background-color: findLightColor(var(--bst-color-link));
+          color: var(--bst-color-link);
           border-left: 1px solid;
           font-weight: 600;
         }
@@ -45,12 +45,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    height: 28px;
+    height: 36px;
     width: 30px;
     cursor: pointer;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
 
     i {
       display: inline-block;
@@ -58,7 +58,7 @@
     }
 
     &:hover {
-      background: var(--focus-color);
+      background: var(--bst-color-on-surface);
     }
   }
 
@@ -87,7 +87,7 @@
       }
 
       > ul {
-        background-color: var(--background-color-sidenav);
+        background-color: var(--bst-color-background-sidenav);
         padding: 0 0 0 1rem;
       }
     }

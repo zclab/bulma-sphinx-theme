@@ -99,7 +99,7 @@ html_theme_options = {
     "source_branch": "main",
     "source_directory": "docs/",
     "use_edit_page_button": True,
-    "fix_navbar": False,
+    "fix_navbar": True,
     "navbar_start": [],
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
     "have_top_navbar": True,
