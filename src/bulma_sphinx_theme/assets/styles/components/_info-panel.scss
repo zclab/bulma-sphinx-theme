@@ -12,5 +12,7 @@
   button.search-button {
     border-radius: 1.2rem;
     font-size: 0.92rem;
+    background: var(--color-background-primary);
+    color: var(--color-foreground-primary);
   }
 }
