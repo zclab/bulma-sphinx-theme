@@ -49,6 +49,19 @@ table.field-list {
 /* overriding basic.css to use our own monospace font */
 .sig {
   font-family: var(--font-stack--monospace);
+
+  &:not(.sig-inline) {
+    background: var(--bst-color-background);
+    transition: background 100ms ease-out;
+
+    &:hover {
+      background: var(--bst-color-on-surface);
+    }
+
+    span.pre {
+      overflow-wrap: anywhere;
+    }
+  }
 }
 
 /* C++ specific styling - overriding the basic.css to avoid custom colors*/
@@ -132,6 +145,12 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(
   dt.field-even {
     margin-top: 0.2rem;
     margin-bottom: 0.1rem;
-    background-color: var(--bst-color-surface);
+    background-color: var(--bst-color-background);
   }
+}
+
+.viewcode-link,
+.viewcode-back {
+  float: right;
+  text-align: right;
 }
