@@ -4,6 +4,69 @@ var tocScroll = null;
 var header = null;
 var lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 const GO_TO_TOP_OFFSET = 64;
+var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+/*******************************************************************************
+ * Search
+ */
+
+function autoTheme(e) {
+  document.documentElement.dataset.theme = prefersDark.matches
+    ? "dark"
+    : "light";
+}
+
+function setTheme(mode) {
+  if (mode !== "light" && mode !== "dark" && mode !== "auto") {
+    console.error(`Got invalid theme mode: ${mode}. Resetting to auto.`);
+    mode = "auto";
+  }
+
+  // get the theme
+  var colorScheme = prefersDark.matches ? "dark" : "light";
+  document.documentElement.dataset.mode = mode;
+  var theme = mode == "auto" ? colorScheme : mode;
+  document.documentElement.dataset.theme = theme;
+
+  // save mode and theme
+  localStorage.setItem("mode", mode);
+  localStorage.setItem("theme", theme);
+  console.log(`[PST]: Changed to ${mode} mode using the ${theme} theme.`);
+
+  // add a listener if set on auto
+  prefersDark.onchange = mode == "auto" ? autoTheme : "";
+}
+
+function cycleMode() {
+  const defaultMode = document.documentElement.dataset.defaultMode || "auto";
+  const currentMode = localStorage.getItem("mode") || defaultMode;
+
+  var loopArray = (arr, current) => {
+    var nextPosition = arr.indexOf(current) + 1;
+    if (nextPosition === arr.length) {
+      nextPosition = 0;
+    }
+    return arr[nextPosition];
+  };
+
+  // make sure the next theme after auto is always a change
+  var modeList = prefersDark.matches
+    ? ["auto", "light", "dark"]
+    : ["auto", "dark", "light"];
+  var newMode = loopArray(modeList, currentMode);
+  setTheme(newMode);
+}
+
+function addModeListener() {
+  // the theme was set a first time using the initial mini-script
+  // running setMode will ensure the use of the dark mode if auto is selected
+  setTheme(document.documentElement.dataset.mode);
+
+  // Attach event handlers for toggling themes colors
+  document.querySelectorAll(".theme-switch-button").forEach((el) => {
+    el.addEventListener("click", cycleMode);
+  });
+}
 
 function scrollHandlerForHeader() {
   if (Math.floor(header.getBoundingClientRect().top) == 0) {
@@ -281,6 +344,7 @@ var setupDropdwon = () => {
 ////////////////////////////////////////////////////////////////////////////////
 function main() {
   document.body.parentNode.classList.remove("no-js");
+  addModeListener();
   setupSearchButtons();
   setupDropdwon();
   header = document.querySelector(".navbar");
