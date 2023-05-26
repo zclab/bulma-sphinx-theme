@@ -51,6 +51,9 @@ table.field-list {
   font-family: var(--font-stack--monospace);
 
   &:not(.sig-inline) {
+    font-weight: bold;
+    padding-left: 3em;
+    text-indent: -2.5em;
     background: var(--bst-color-background);
     transition: background 100ms ease-out;
 
@@ -153,4 +156,29 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(
 .viewcode-back {
   float: right;
   text-align: right;
+}
+
+em.property {
+  font-style: normal;
+
+  &:first-child {
+    color: var(--bst-color-text-base);
+  }
+}
+
+.sig-prename {
+  font-weight: normal;
+  color: var(--bst-color-danger);
+}
+
+.sig-paren {
+  color: var(--bst-color-text-muted);
+}
+
+.sig-param {
+  font-style: normal;
+}
+
+.versionmodified {
+  font-style: italic;
 }

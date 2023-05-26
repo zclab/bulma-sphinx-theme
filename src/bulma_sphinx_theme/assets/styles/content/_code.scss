@@ -14,11 +14,16 @@ div.literal-block-wrapper {
   border-radius: $admonition-border-radius;
 }
 
+div[class*="highlight-"] {
+  margin: 1em 0;
+}
+
 // Code blocks with captions
 // There's a wrapper when the code block has a title
 div.literal-block-wrapper {
   border: 1px solid var(--bst-color-border);
   border-radius: $admonition-border-radius;
+  margin: 1em 0;
 
   // This is where the title goes
   div.code-block-caption {
