@@ -9,6 +9,10 @@ $bst-semantic-colors: (
   "secondary": rgb(238, 144, 64),
   "info": hsl(204, 86%, 53%),
   "warning": hsl(48, 100%, 67%),
+  "link": (
+    "light": hsl(217, 71%, 53%),
+    "dark": hsl(217, 68%, 44%),
+  ),
   "success": (
     "light": hsl(141, 53%, 53%),
     "dark": hsl(141, 49%, 32%),
@@ -110,7 +114,6 @@ $bst-semantic-colors: (
 
   // assign the "duplicate" colors (ones that just reference other variables)
   & {
-    --bst-color-link: var(--bst-color-primary);
     --bst-color-link-hover: var(--bst-color-warning);
   }
 

@@ -24,8 +24,8 @@
         overflow: auto;
 
         .menu-list a.is-active {
-          background-color: findLightColor(var(--bst-color-primary));
-          color: var(--bst-color-primary);
+          background-color: findLightColor(var(--bst-color-link));
+          color: var(--bst-color-link);
           border-left: 1px solid;
           font-weight: 600;
         }
@@ -58,7 +58,7 @@
     }
 
     &:hover {
-      background: var(--focus-color);
+      background: var(--bst-color-on-surface);
     }
   }
 
@@ -87,7 +87,7 @@
       }
 
       > ul {
-        background-color: var(--background-color-sidenav);
+        background-color: var(--bst-color-background-sidenav);
         padding: 0 0 0 1rem;
       }
     }
