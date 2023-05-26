@@ -7,7 +7,7 @@ const GO_TO_TOP_OFFSET = 64;
 var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 /*******************************************************************************
- * Search
+ * Theme switcher
  */
 
 function autoTheme(e) {
@@ -31,7 +31,7 @@ function setTheme(mode) {
   // save mode and theme
   localStorage.setItem("mode", mode);
   localStorage.setItem("theme", theme);
-  console.log(`[PST]: Changed to ${mode} mode using the ${theme} theme.`);
+  console.log(`[BST]: Changed to ${mode} mode using the ${theme} theme.`);
 
   // add a listener if set on auto
   prefersDark.onchange = mode == "auto" ? autoTheme : "";
@@ -67,6 +67,8 @@ function addModeListener() {
     el.addEventListener("click", cycleMode);
   });
 }
+
+////////////////////////////////////////////////////////////////////////////////
 
 function scrollHandlerForHeader() {
   if (Math.floor(header.getBoundingClientRect().top) == 0) {
