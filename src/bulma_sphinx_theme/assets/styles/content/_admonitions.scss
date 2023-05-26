@@ -10,7 +10,7 @@ div.admonition,
   padding: 0 0.6rem 0.8rem 0.6rem;
   overflow: hidden;
   page-break-inside: avoid;
-  border: 0.6px solid;
+  border: 1px solid;
   border-color: var(--bst-color-info);
   border-radius: $admonition-border-radius;
   background-color: var(--bst-color-on-background);
@@ -41,6 +41,7 @@ div.admonition,
     position: relative;
     display: flex;
     align-items: center;
+    color: var(--bst-color-text-base);
 
     &:after {
       position: absolute;
