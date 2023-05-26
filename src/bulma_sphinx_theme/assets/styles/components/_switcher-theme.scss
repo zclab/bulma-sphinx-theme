@@ -21,14 +21,14 @@
   }
 }
 
-:root[data-mode="auto"] .theme-switch-button span[data-mode="auto"] {
+html[data-mode="auto"] .theme-switch-button span[data-mode="auto"] {
   display: flex;
 }
 
-:root[data-mode="light"] .theme-switch-button span[data-mode="light"] {
+html[data-mode="light"] .theme-switch-button span[data-mode="light"] {
   display: flex;
 }
 
-:root[data-mode="dark"] .theme-switch-button span[data-mode="dark"] {
+html[data-mode="dark"] .theme-switch-button span[data-mode="dark"] {
   display: flex;
 }
