@@ -1,9 +1,9 @@
 .bulma-sidenav {
   display: block;
   clip-path: inset(0);
-  background-color: var(--color-background-sidenav);
+  background-color: var(--bst-color-background-sidenav);
   width: var(--sidenav-width);
-  border-right: 1px solid var(--color-background-border);
+  border-right: 1px solid var(--bst-color-border);
   margin-top: calc(
     var(--navbar-height) * var(--sidenav-sticky-top-factor) * -1
   );
@@ -24,8 +24,8 @@
         overflow: auto;
 
         .menu-list a.is-active {
-          background-color: var(--color-active-background);
-          color: var(--color-active-text-foreground);
+          background-color: findLightColor(var(--bst-color-primary));
+          color: var(--bst-color-primary);
           border-left: 1px solid;
           font-weight: 600;
         }
