@@ -1,0 +1,7 @@
+<div class="info-panel">
+    {% include "components/search-button.html" %}
+
+    {%- for panel_section in theme_information_panel %}
+    {%- include panel_section %}
+    {%- endfor %}
+</div>
