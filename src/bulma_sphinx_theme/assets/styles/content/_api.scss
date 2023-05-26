@@ -137,11 +137,46 @@ dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.glossary):not(
     & > dl.simple > dt {
       display: flex;
     }
+
+    & > :first-child {
+      margin-top: 0.125rem;
+    }
+
+    & > :last-child {
+      margin-bottom: 0.75rem;
+    }
   }
 
   dl.field-list {
-    display: grid;
-    grid-template-columns: unset;
+    margin-bottom: 0.75rem;
+
+    & > dt {
+      text-transform: uppercase;
+      font-size: var(--font-size--small);
+    }
+
+    dd:empty {
+      margin-bottom: 0.5rem;
+    }
+
+    dd > ul {
+      margin-left: -1.2rem;
+
+      & > li {
+        & > p:nth-child(2) {
+          margin-top: 0;
+        }
+
+        & > p + p:last-child:empty {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  & > dt {
+    color: var(--bst-color-text-muted);
   }
 
   dt.field-odd,
