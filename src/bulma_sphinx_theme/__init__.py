@@ -75,6 +75,9 @@ def _html_page_context(
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     theme_options = get_theme_options(app)
 
+    if not theme_options.get("have_top_navbar"):
+        theme_options["fix_navbar"] = False
+
     # Add an analytics ID to the site if provided
     analytics = theme_options.get("analytics", {})
     if analytics:
@@ -112,6 +115,7 @@ def update_and_remove_templates(
         "theme_article_bottom_right",
         "theme_navbar_start",
         "theme_navbar_end",
+        "theme_information_panel",
         "sidebars",
     ]
 

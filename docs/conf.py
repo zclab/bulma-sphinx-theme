@@ -102,6 +102,7 @@ html_theme_options = {
     "fix_navbar": False,
     "navbar_start": [],
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
+    "have_top_navbar": True,
 }
 
 ## Sphinx Tippy configuration, see https://sphinx-tippy.readthedocs.io/en/latest/
