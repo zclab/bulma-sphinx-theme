@@ -10,7 +10,7 @@ div.admonition,
   padding: 0 0.6rem 0.8rem 0.6rem;
   overflow: hidden;
   page-break-inside: avoid;
-  border-left: 0.2rem solid;
+  border: 0.6px solid;
   border-color: var(--bst-color-info);
   border-radius: $admonition-border-radius;
   background-color: var(--bst-color-on-background);
@@ -52,7 +52,7 @@ div.admonition,
       opacity: 1;
     }
 
-    @include background-from-color-variable(--bst-color-info);
+    @include background-from-color-variable(--bst-color-info, 0.2);
 
     // Next element after title needs some extra upper-space
     + * {

@@ -13,7 +13,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--pst-color-text-muted);
+    background: var(--bst-color-text-muted);
     border-radius: 0.25rem;
   }
 
@@ -22,19 +22,19 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--pst-color-on-surface);
+    background: var(--bst-color-on-surface);
   }
 
   // Hovering behavior for the scrollbar
   // Include both hovering on the parent and on the thumb in case thumb is outside parent
   &:hover {
     &::-webkit-scrollbar-thumb {
-      background: var(--pst-color-text-muted);
+      background: var(--bst-color-text-muted);
     }
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: var(--pst-color-text-muted);
+    background: var(--bst-color-text-muted);
   }
 }
 
@@ -42,8 +42,8 @@
  * A consistent box shadow style we apply across elements.
  */
 @mixin box-shadow() {
-  box-shadow: 0 0.2rem 0.5rem var(--pst-color-shadow),
-    0 0 0.0625rem var(--pst-color-shadow) !important;
+  box-shadow: 0 0.2rem 0.5rem var(--bst-color-shadow),
+    0 0 0.0625rem var(--bst-color-shadow) !important;
 }
 
 /**
@@ -76,8 +76,8 @@
  * This is because many libraries make output that only looks good on white
  */
 @mixin cell-output-background {
-  color: var(--pst-color-on-background);
-  background-color: var(--pst-color-text-base);
+  color: var(--bst-color-on-background);
+  background-color: var(--bst-color-text-base);
   border-radius: 0.25rem;
   padding: 0.5rem;
 }

@@ -21,7 +21,7 @@ Cards and tabs provide some extra UI flexibility for your content. Both `sphinx-
 
        /* overwrite panels shadows using pydata-sphinx-theme variable */
        .shadow {
-           box-shadow: 0 0.5rem 1rem var(--pst-color-shadow) !important;
+           box-shadow: 0 0.5rem 1rem var(--bst-color-shadow) !important;
        }
 
    This modification is not needed when using the :code:`sphinx-design` extention.
