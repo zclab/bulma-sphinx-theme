@@ -11,7 +11,7 @@ from ._toctree import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
-__version__ = "0.0.3.dev0"
+__version__ = "0.0.3.dev1"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
@@ -58,6 +58,13 @@ def _html_page_context(
             ["scripts/bulma-sphinx-theme.js"],
         )
 
+    # determine the startdepth for building the theme
+    theme_options = get_theme_options(app)
+    start_depth = theme_options.get("have_top_navbar", True)
+    if not isinstance(start_depth, bool):
+        start_depth = True
+    context["start_depth"] = int(start_depth)
+
     # Basic constants
     context["theme_version"] = __version__
     # Translations
@@ -66,14 +73,6 @@ def _html_page_context(
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
-    def _update_default(key: str, *, new_default: Any) -> None:
-        app.config.values[key] = (new_default, *app.config.values[key][1:])
-
-    # Change the default permalinks icon
-    _update_default("html_permalinks_icon", new_default="#")
-
-
-def _update_config(app: sphinx.application.Sphinx) -> None:
     theme_options = get_theme_options(app)
 
     # Add an analytics ID to the site if provided
@@ -94,6 +93,12 @@ def _update_config(app: sphinx.application.Sphinx) -> None:
             # Link the JS files
             app.add_js_file(gid_js_path, loading_method="async")
             app.add_js_file(None, body=gid_script)
+
+    def _update_default(key: str, *, new_default: Any) -> None:
+        app.config.values[key] = (new_default, *app.config.values[key][1:])
+
+    # Change the default permalinks icon
+    _update_default("html_permalinks_icon", new_default="#")
 
 
 def update_and_remove_templates(
@@ -140,7 +145,6 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     app.connect("html-page-context", update_and_remove_templates)
     app.connect("html-page-context", add_toctree_functions)
     app.connect("builder-inited", _builder_inited)
-    app.connect("builder-inited", _update_config)
     app.config.templates_path.append(str(theme_dir / "components"))
 
     return {

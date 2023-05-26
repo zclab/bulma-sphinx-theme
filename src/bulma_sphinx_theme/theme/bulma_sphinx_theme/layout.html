@@ -2,6 +2,7 @@
 
 {%- set sidebar_nav_html = generate_toctree_html(
 "sidebar",
+startdepth=start_depth,
 show_nav_level=theme_show_nav_level|int,
 maxdepth=theme_navigation_depth|int,
 collapse=theme_collapse_navigation|tobool,
@@ -9,16 +10,15 @@ includehidden=True,
 titles_only=True)
 -%}
 
-{%- set head_nav_html = generate_header_nav_html(n_links_before_dropdown=theme_header_links_before_dropdown)
--%}
-
 {% block htmlbody -%}
 
 {% block docs_headnav %}
+{% if theme_have_top_navbar %}
 <nav class="navbar has-shadow {% if theme_fix_navbar %} is-fixed-top {% endif %} {% if theme_navbar_color_style %} {{ theme_navbar_color_style }} {% endif %}"
     role="navigation" aria-label="main navigation">
     {% include "sections/headnav.html" %}
 </nav>
+{% endif %}
 {% endblock docs_headnav %}
 
 {%- block mainbody -%}

@@ -122,6 +122,10 @@
   --color-link--hover: var(--color-brand-content);
   --color-link-underline: var(--color-background-border);
   --color-link-underline--hover: var(--color-foreground-border);
+
+  // Active
+  --color-active-background: var(--color-highlighted-background);
+  --color-active-text-foreground: var(--color-brand-content);
 }
 
 @mixin colors-dark {
