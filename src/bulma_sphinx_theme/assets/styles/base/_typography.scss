@@ -39,39 +39,39 @@ h6 a {
 }
 
 h1 {
-  font-size: $h1-fontsize;
+  font-size: $size-1;
   line-height: 110%;
-  margin: math.div($h1-fontsize, 1.5) 0 math.div($h1-fontsize, 2.5) 0;
+  margin: math.div($size-1, 1.5) 0 math.div($size-1, 2.5) 0;
 }
 
 h2 {
-  font-size: $h2-fontsize;
+  font-size: $size-2;
   line-height: 110%;
-  margin: math.div($h2-fontsize, 1.5) 0 math.div($h2-fontsize, 2.5) 0;
+  margin: math.div($size-2, 1.5) 0 math.div($size-2, 2.5) 0;
 }
 
 h3 {
-  font-size: $h3-fontsize;
+  font-size: $size-3;
   line-height: 110%;
-  margin: math.div($h3-fontsize, 1.5) 0 math.div($h3-fontsize, 2.5) 0;
+  margin: math.div($size-3, 1.5) 0 math.div($size-3, 2.5) 0;
 }
 
 h4 {
-  font-size: $h4-fontsize;
+  font-size: $size-4;
   line-height: 110%;
-  margin: math.div($h4-fontsize, 1.5) 0 math.div($h4-fontsize, 2.5) 0;
+  margin: math.div($size-4, 1.5) 0 math.div($size-4, 2.5) 0;
 }
 
 h5 {
-  font-size: $h5-fontsize;
+  font-size: $size-5;
   line-height: 110%;
-  margin: math.div($h5-fontsize, 1.5) 0 math.div($h5-fontsize, 2.5) 0;
+  margin: math.div($size-5, 1.5) 0 math.div($size-5, 2.5) 0;
 }
 
 h6 {
-  font-size: $h6-fontsize;
+  font-size: $size-6;
   line-height: 110%;
-  margin: math.div($h6-fontsize, 1.5) 0 math.div($h6-fontsize, 2.5) 0;
+  margin: math.div($size-6, 1.5) 0 math.div($size-6, 2.5) 0;
 }
 
 p {
