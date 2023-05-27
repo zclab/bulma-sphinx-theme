@@ -1,11 +1,15 @@
 .bulma-tocnav {
   width: var(--tocnav-width);
   padding: 0 1rem;
+  word-break: break-all;
 
   .toc-wrapper {
     position: sticky;
     top: calc(var(--navbar-height) + var(--top-content-to-navbar-gap));
-    overflow: hidden;
+    overflow-y: auto;
+    max-height: calc(
+      100vh - var(--navbar-height) - var(--top-content-to-navbar-gap)
+    );
   }
 
   ul.table-of-contents {
