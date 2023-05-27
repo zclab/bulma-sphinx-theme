@@ -2,7 +2,7 @@
 .theme-switch-button {
   // overide bootstrap settings
   padding: 0; // We pad the `span` not the container
-  color: var(--color-foreground-muted);
+  color: var(--bst-color-text-muted);
   width: fit-content;
   aspect-ratio: 1 / 1;
   background: none;
@@ -16,7 +16,7 @@
     &:active,
     &:focus {
       text-decoration: none;
-      color: var(--color-brand-primary);
+      color: var(--bst-color-primary);
     }
   }
 }
