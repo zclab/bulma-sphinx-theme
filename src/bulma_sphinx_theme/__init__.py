@@ -11,7 +11,7 @@ from ._toctree import add_toctree_functions
 from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
 from .utils import get_theme_options
 
-__version__ = "0.0.3"
+__version__ = "0.0.4.dev0"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
