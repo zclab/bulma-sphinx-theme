@@ -23,6 +23,7 @@ pre {
 
 pre {
   background-color: unset;
+  color: var(--bst-color-text-base);
 }
 
 .centered {
@@ -89,4 +90,8 @@ p {
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+strong {
+  color: var(--bst-color-text-base);
 }

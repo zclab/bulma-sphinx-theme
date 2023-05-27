@@ -7,11 +7,9 @@ from pathlib import Path
 from typing import Any, Dict, List
 from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
-from ._toctree import add_toctree_functions
-from ._transforms import ShortenLinkTransform, WrapTableAndMathInAContainerTransform
-from .utils import get_theme_options
+from . import pygment, toctree, transforms, utils
 
-__version__ = "0.0.4.dev0"
+__version__ = "0.0.4.dev1"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
@@ -59,7 +57,7 @@ def _html_page_context(
         )
 
     # determine the startdepth for building the theme
-    theme_options = get_theme_options(app)
+    theme_options = utils.get_theme_options(app)
     start_depth = theme_options.get("have_top_navbar", True)
     if not isinstance(start_depth, bool):
         start_depth = True
@@ -73,7 +71,7 @@ def _html_page_context(
 
 
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
-    theme_options = get_theme_options(app)
+    theme_options = utils.get_theme_options(app)
 
     if not theme_options.get("have_top_navbar"):
         theme_options["fix_navbar"] = False
@@ -140,16 +138,17 @@ def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
 
     theme_dir = _get_html_theme_path()
     app.add_html_theme("bulma_sphinx_theme", theme_dir)
-    app.add_post_transform(ShortenLinkTransform)
-    app.add_post_transform(WrapTableAndMathInAContainerTransform)
+    app.add_post_transform(transforms.ShortenLinkTransform)
+    app.add_post_transform(transforms.WrapTableAndMathInAContainerTransform)
     # Translations
     locale_dir = os.path.join(theme_dir, "static", "locales")
     app.add_message_catalog(MESSAGE_CATALOG_NAME, locale_dir)
 
     app.connect("html-page-context", _html_page_context)
     app.connect("html-page-context", update_and_remove_templates)
-    app.connect("html-page-context", add_toctree_functions)
+    app.connect("html-page-context", toctree.add_toctree_functions)
     app.connect("builder-inited", _builder_inited)
+    app.connect("build-finished", pygment.overwrite_pygments_css)
     app.config.templates_path.append(str(theme_dir / "components"))
 
     return {

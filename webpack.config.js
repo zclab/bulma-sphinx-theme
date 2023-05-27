@@ -7,7 +7,7 @@ const { Compilation } = require("webpack");
 
 // Compile our translation files
 const { exec } = require("child_process");
-exec("python src/bulma_sphinx_theme/_translations.py");
+exec("python src/bulma_sphinx_theme/translations.py");
 
 const scriptPath = resolve(__dirname, "src/bulma_sphinx_theme/assets/scripts");
 const stylePath = resolve(__dirname, "src/bulma_sphinx_theme/assets/styles");
