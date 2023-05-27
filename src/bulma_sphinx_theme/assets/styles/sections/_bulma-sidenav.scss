@@ -23,11 +23,15 @@
         padding-left: 15px;
         overflow: auto;
 
-        .menu-list a.is-active {
-          background-color: findLightColor(var(--bst-color-link));
-          color: var(--bst-color-link);
-          border-left: 1px solid;
-          font-weight: 600;
+        .menu-list a {
+          color: var(--bst-color-text-base);
+
+          &.is-active {
+            background-color: findLightColor(var(--bst-color-link));
+            color: var(--bst-color-link);
+            border-left: 1px solid;
+            font-weight: 600;
+          }
         }
 
         p.caption {
