@@ -21,6 +21,10 @@ pre {
   font-family: var(--font-stack--monospace);
 }
 
+pre {
+  background-color: unset;
+}
+
 .centered {
   text-align: center;
 }
