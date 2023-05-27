@@ -58,10 +58,10 @@ def _html_page_context(
 
     # determine the startdepth for building the theme
     theme_options = utils.get_theme_options(app)
-    start_depth = theme_options.get("have_top_navbar", True)
-    if not isinstance(start_depth, bool):
-        start_depth = True
-    context["start_depth"] = int(start_depth)
+    have_navbar = theme_options.get("have_top_navbar", True)
+    if not isinstance(have_navbar, bool):
+        have_navbar = True
+    context["start_depth"] = int(have_navbar)
 
     # Basic constants
     context["theme_version"] = __version__
@@ -73,7 +73,8 @@ def _html_page_context(
 def _builder_inited(app: sphinx.application.Sphinx) -> None:
     theme_options = utils.get_theme_options(app)
 
-    if not theme_options.get("have_top_navbar"):
+    have_navbar = theme_options.get("have_top_navbar", True)
+    if not (have_navbar):
         theme_options["fix_navbar"] = False
 
     # Add an analytics ID to the site if provided
