@@ -115,6 +115,7 @@ def update_and_remove_templates(
         "theme_article_bottom_right",
         "theme_navbar_start",
         "theme_navbar_end",
+        "theme_navbar_include_directly",
         "theme_information_panel",
         "sidebars",
     ]
