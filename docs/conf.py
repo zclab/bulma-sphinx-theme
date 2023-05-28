@@ -103,3 +103,5 @@ html_theme_options = {
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
     "have_top_navbar": True,
 }
+
+html_context = {"default_mode": "auto"}

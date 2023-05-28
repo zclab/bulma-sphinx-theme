@@ -1,6 +1,6 @@
 <!doctype html>
 <html class="no-js {% if theme_fix_navbar %} has-navbar-fixed-top {% endif %}" {% if language is not none %}
-    lang="{{ language }}" {% endif %}>
+    lang="{{ language }}" {% endif %} {% if default_mode %}data-theme="{{ default_mode }}" {% endif %}>
 {%- import "static/webpack-macros.html" as _webpack with context %}
 {%- import "partials/_icon_links_declare.html" as _icon_declare with context %}
 
@@ -90,7 +90,7 @@
     {%- block extrahead -%}{%- endblock extrahead -%}
 </head>
 
-<body>
+<body data-default-mode="{{ default_mode }}">
     {% block htmlbody %}
     {% endblock htmlbody %}
 
