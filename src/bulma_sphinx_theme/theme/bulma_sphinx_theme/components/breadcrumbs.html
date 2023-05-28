@@ -5,10 +5,12 @@ The ones in the middle and add an ellipsis.
 This code is from
 https://github.com/pydata/pydata-sphinx-theme/blob/main/src/pydata_sphinx_theme/theme/pydata_sphinx_theme/components/breadcrumbs.html
 #}
-{% if parents|length>2 %}
-{% set parents=[parents[0], {"title": '<i class="fa-solid fa-ellipsis"></i>'}, parents[-1]] %}
-{% endif %}
 
+{# djlint:off #}
+{% if parents|length>2 %}
+{% set parents=[parents[0], {"title": '&bull;&bull;&bull;'}, parents[-1]] %}
+{% endif %}
+{# djlint:on #}
 
 {#- Hide breadcrumbs on the home page #}
 {% if title and pagename != root_doc %}

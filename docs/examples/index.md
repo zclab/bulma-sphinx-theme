@@ -15,3 +15,13 @@ reference/index
 
 kitchen-sink/index
 ```
+
+```{toctree}
+:caption: Reference and test section
+:maxdepth: 2
+:numbered:
+
+subpages/index
+mult_headers
+Link to an external site <https://github.com>
+```

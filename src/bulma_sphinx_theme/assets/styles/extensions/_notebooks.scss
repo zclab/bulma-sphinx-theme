@@ -1,0 +1,38 @@
+/*******************************************************************************
+ * myst NB
+ */
+
+div.cell_output .output {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+// Dark theme special-cases
+html[data-theme="dark"] .bulma-content {
+  div.cell_output {
+    img,
+    .text_html {
+      @include cell-output-background;
+    }
+  }
+}
+
+// Prevent tables from scrunching together
+.bulma-content {
+  div.cell_input {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+  }
+
+  div.cell_input,
+  div.output {
+    border-radius: $admonition-border-radius;
+  }
+
+  div.output {
+    table {
+      table-layout: auto;
+    }
+  }
+}
