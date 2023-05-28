@@ -54,12 +54,12 @@ html_show_sourcelink = True
 todo_include_todos = True
 
 # https://github.com/hung1001/font-awesome-pro-v6
-html_css_files = [
-    "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
-]
+# html_css_files = [
+#     "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
+# ]
 
 html_theme_options = {
-    "header_links_before_dropdown": 4,
+    "header_links_before_dropdown": 5,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "header_icons": [
@@ -103,3 +103,5 @@ html_theme_options = {
     "navbar_end": ["navbar-nav.html", "header-icons.html"],
     "have_top_navbar": True,
 }
+
+html_context = {"default_mode": "auto"}

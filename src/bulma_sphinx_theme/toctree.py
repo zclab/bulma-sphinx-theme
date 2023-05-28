@@ -92,7 +92,14 @@ def _add_collapse_checkboxes(soup):
         label = soup.new_tag(
             "label", attrs={"for": checkbox_name, "class": "toctree-toggle"}
         )
-        label.append(soup.new_tag("i", attrs={"class": "fa-solid fa-chevron-down"}))
+        ##########################################################
+        retval = soup.new_tag("i", attrs={"class": "svg-icon"})
+        svg_element = soup.new_tag("svg")
+        svg_use_element = soup.new_tag("use", href="#svg-arrow-right")
+        svg_element.append(svg_use_element)
+        retval.append(svg_element)
+        ##########################################################
+        label.append(retval)
         if "toctree-l0" in classes:
             # making label cover the whole caption text with css
             label["class"] = "label-parts"
