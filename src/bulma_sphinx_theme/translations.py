@@ -61,7 +61,7 @@ msgstr ""
                 f.write(f'msgstr "{text}"\n')
 
     # compile mo
-    for path in (out_folder / "locales").glob("**/bulmasphinxthemepo"):
+    for path in (out_folder / "locales").glob("**/bulmasphinxtheme.po"):
         print(path)
         subprocess.check_call(
             [
