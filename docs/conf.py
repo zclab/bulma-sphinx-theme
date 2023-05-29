@@ -26,6 +26,7 @@ extensions = [
     "sphinx_subfigure",
     "bulma_sphinx_theme.demo.sphinxext",
     "myst_parser",
+    # "ablog",
     # "jupyter_sphinx",
     # "myst_nb",
     # "matplotlib.sphinxext.plot_directive",
@@ -60,6 +61,7 @@ todo_include_todos = True
 # html_css_files = [
 #     "https://cdn.jsdelivr.net/gh/duyplus/fontawesome-pro/css/all.min.css",
 # ]
+# fontawesome_included = True
 
 html_theme_options = {
     "header_links_before_dropdown": 5,
@@ -108,3 +110,30 @@ html_theme_options = {
 }
 
 html_context = {"default_mode": "auto"}
+
+# blog_path = "blog"
+# blog_post_pattern = "posts/*/*"
+# blog_authors = {
+#     "zclab": ("子川", "https://github.com/zclab"),
+# }
+
+# html_sidebars = {
+#     "posts/**": [
+#         "ablog/postcard.html",
+#         "ablog/categories.html",
+#         "ablog/tagcloud.html",
+#         "ablog/recentposts.html",
+#     ],
+#     "blog": [
+#         "ablog/categories.html",
+#         "ablog/tagcloud.html",
+#         "ablog/archives.html",
+#         "ablog/recentposts.html",
+#     ],
+#     "blog/**": [
+#         "ablog/categories.html",
+#         "ablog/tagcloud.html",
+#         "ablog/archives.html",
+#         "ablog/recentposts.html",
+#     ],
+# }
