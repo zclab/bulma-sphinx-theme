@@ -1,12 +1,5 @@
 # Bulma Sphinx Theme
 
-```{include} ../README.md
-:start-after: <!-- start badges -->
-:end-before: <!-- end badges -->
-```
-
----
-
 This is a bulma based sphinx theme, see the [Bulma Documentation](https://bulma.io/) for reference.
 
 ```{toctree}

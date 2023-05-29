@@ -19,13 +19,16 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.todo",
     "sphinx.ext.viewcode",
-    "myst_parser",
     "sphinx_inline_tabs",
     "sphinx_design",
     "sphinx_copybutton",
     "sphinx_togglebutton",
     "sphinx_subfigure",
     "bulma_sphinx_theme.demo.sphinxext",
+    "myst_parser",
+    # "jupyter_sphinx",
+    # "myst_nb",
+    # "matplotlib.sphinxext.plot_directive",
 ]
 
 

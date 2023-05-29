@@ -60,3 +60,11 @@ code.literal {
   border: 1px solid var(--bst-color-on-surface);
   border-radius: 0.25rem;
 }
+
+div.highlight {
+  .gp,
+  span.linenos {
+    user-select: none;
+    pointer-events: none;
+  }
+}
