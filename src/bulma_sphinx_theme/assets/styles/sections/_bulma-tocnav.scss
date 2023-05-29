@@ -23,7 +23,6 @@
         color: var(--bst-color-text-base);
         padding-left: 16px;
         height: 1.6rem;
-        line-height: 1.5rem;
       }
 
       &.scroll-current > .reference {
@@ -50,6 +49,8 @@
 }
 
 .toc-title {
+  font-weight: 600;
   padding-left: 16px;
+  padding-bottom: 5px;
   font-size: var(--toc-title-font-size);
 }
