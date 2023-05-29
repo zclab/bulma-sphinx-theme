@@ -43,14 +43,34 @@ main.bulma-content {
     }
   }
 
-  .simple,
   .toctree-wrapper {
-    li {
-      > ul,
-      > ol {
-        margin-top: 0;
-        margin-bottom: 0;
+    p.caption {
+      font-size: $size-4;
+      margin-bottom: 0em;
+    }
+
+    & > ul {
+      padding-left: 0;
+    }
+
+    li[class^="toctree-l"] {
+      list-style: none;
+      margin-bottom: 0.2em;
+
+      & > a {
+        list-style: none;
+        font-size: 1.1em;
       }
+
+      & > ul {
+        list-style: none;
+        padding-inline-start: 1.5em;
+      }
+    }
+
+    // slightly bigger font for l1
+    .toctree-l1 > a {
+      font-size: $size-5;
     }
   }
 
@@ -114,5 +134,16 @@ article.article-container {
         }
       }
     }
+  }
+}
+
+div.topic.contents,
+// Docutils <= 0.17
+nav.contents // Docutils >= 0.18
+{
+  // Style similarly to toctree
+  ul.simple {
+    list-style: none;
+    padding-left: 0;
   }
 }
