@@ -256,14 +256,25 @@ def add_toctree_functions(app, pagename, templatename, context, doctree):
         links_dropdown = links_html[n_links_before_dropdown:]
         if links_dropdown:
             links_dropdown_html = "\n".join(links_dropdown)
-            out_headnav += f"""
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">{context["theme_dropdown_label_name"]}</a>
-                <div class="navbar-dropdown">
-                    {links_dropdown_html}
+            if context["theme_dropdown_label_target_url"]:
+                out_headnav += f"""
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" href={context["theme_dropdown_label_target_url"]}>{context["theme_dropdown_label_name"]}</a>
+                    <div class="navbar-dropdown">
+                        {links_dropdown_html}
+                    </div>
                 </div>
-            </div>
-            """  # noqa
+                """  # noqa
+
+            else:
+                out_headnav += f"""
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <span class="navbar-link">{context["theme_dropdown_label_name"]}</span>
+                    <div class="navbar-dropdown">
+                        {links_dropdown_html}
+                    </div>
+                </div>
+                """  # noqa
 
         return out_headnav
 
