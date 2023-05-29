@@ -46,8 +46,8 @@ div.admonition,
     &:after {
       position: absolute;
       left: 0.5rem;
-      width: 1rem;
-      height: 1rem;
+      width: 1.2rem;
+      height: 1.2rem;
       line-height: inherit;
       background-color: var(--bst-color-info);
       content: "";
@@ -55,7 +55,7 @@ div.admonition,
       opacity: 1;
     }
 
-    @include background-from-color-variable(--bst-color-info, 0.2);
+    @include background-from-color-variable(--bst-color-info, 0.1);
 
     // Next element after title needs some extra upper-space
     + * {
