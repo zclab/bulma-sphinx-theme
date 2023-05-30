@@ -2,4 +2,8 @@ nav.breadcrumb {
   ul {
     padding-left: 0;
   }
+
+  span.breadcrumb-last-item {
+    padding: 0 0.75em;
+  }
 }
