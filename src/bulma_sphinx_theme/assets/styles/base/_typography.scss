@@ -122,7 +122,8 @@ svg {
   &.svg-pencil,
   &.svg-file-description,
   &.svg-clock-edit,
-  &.svg-search {
+  &.svg-search,
+  &.svg-package {
     width: 100%;
     height: 100%;
   }
@@ -130,14 +131,14 @@ svg {
 
 html[data-theme="dark"] {
   svg {
-    &.svg-bulma,
     &.svg-github,
     &.svg-gitlab,
     &.svg-home,
     &.svg-pencil,
     &.svg-file-description,
     &.svg-clock-edit,
-    &.svg-search {
+    &.svg-search,
+    &.svg-package {
       filter: hue-rotate(40deg) saturate(0.5) brightness(390%) saturate(4);
     }
   }
