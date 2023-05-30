@@ -341,6 +341,17 @@ var setupDropdwon = () => {
  * dropdown trigger ended
  */
 
+/*******************************************************************************
+ * https://bulma.io/documentation/components/navbar/#navbar-menu
+ */
+function navbarBurger() {
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function () {
+    // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+    $(".navbar-burger").toggleClass("is-active");
+    $(".navbar-menu").toggleClass("is-active");
+  });
+}
 ////////////////////////////////////////////////////////////////////////////////
 // Main entrypoint
 ////////////////////////////////////////////////////////////////////////////////
@@ -349,6 +360,7 @@ function main() {
   addModeListener();
   setupSearchButtons();
   setupDropdwon();
+  navbarBurger();
   header = document.querySelector(".navbar");
   tocScroll = document.querySelector(".toc-scroll");
   setup();
