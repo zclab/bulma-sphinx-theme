@@ -1,0 +1,38 @@
+/*************************
+ * Search button
+ */
+// Search link icon should be a bit bigger since it is separate from icon links
+
+// __search-container will only show up when we use the search pop-up bar
+.search-button__search-container,
+.search-button__overlay {
+  display: none;
+}
+
+.search-button__wrapper.show {
+  .search-button__search-container {
+    display: flex;
+    // Center in middle of screen just underneath header
+    position: fixed;
+    z-index: 1499;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: 1rem;
+    margin-top: 0.5rem;
+    width: 90%;
+    max-width: 800px;
+  }
+
+  .search-button__overlay {
+    display: flex;
+    position: fixed;
+    z-index: 1499;
+    background-color: black;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+}
