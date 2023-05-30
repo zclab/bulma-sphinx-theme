@@ -86,6 +86,11 @@ p {
   margin-right: 2rem;
   margin-top: 0;
 
+  @include touch {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
   /* the columns:last-child fix body height have a small gap to screen bottom */
   &:last-child {
     margin-bottom: 0;

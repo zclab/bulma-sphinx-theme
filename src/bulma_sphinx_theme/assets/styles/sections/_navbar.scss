@@ -8,4 +8,10 @@
       margin-top: 0.2rem;
     }
   }
+
+  a.navbar-item.ext-link {
+    @include touch {
+      display: inline-block;
+    }
+  }
 }

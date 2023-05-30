@@ -110,6 +110,12 @@
   .ablog-post {
     list-style: none;
 
+    ul.ablog-archive {
+      & > li {
+        list-style: none;
+      }
+    }
+
     // Post metadata tags (author, links ,etc) should be a bit smaller
     .ablog-archive {
       display: flex;
@@ -118,13 +124,13 @@
       gap: 1rem;
       list-style: none;
       font-size: 0.75rem;
-      // padding-left: 0;
+      padding-left: 0;
     }
 
     // Title line should be a bit bigger and bold to stand out
     .ablog-post-title {
       margin-top: 0;
-      font-size: 1.25rem;
+      font-size: $size-4;
 
       a {
         font-weight: bold;
