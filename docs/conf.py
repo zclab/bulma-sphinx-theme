@@ -71,12 +71,12 @@ html_theme_options = {
         {
             "name": "Github",
             "url": "https://github.com/zclab/bulma-sphinx-theme",
-            "image": "https://www.svgrepo.com/show/433505/github-o.svg",
+            "svg": "github",
         },
         {
             "name": "Bulma",
             "url": "https://bulma.io/",
-            "image": "https://bulma.io/favicons/favicon.ico",
+            "svg": "bulma",
         },
         {
             "name": "Pydata",
