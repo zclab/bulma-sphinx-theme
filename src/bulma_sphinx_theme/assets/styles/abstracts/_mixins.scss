@@ -6,7 +6,8 @@
  * A consistent box shadow style we apply across elements.
  */
 @mixin box-shadow() {
-  box-shadow: 0 0.2rem 0.5rem var(--bst-color-shadow),
+  box-shadow:
+    0 0.2rem 0.5rem var(--bst-color-shadow),
     0 0 0.0625rem var(--bst-color-shadow) !important;
 }
 
