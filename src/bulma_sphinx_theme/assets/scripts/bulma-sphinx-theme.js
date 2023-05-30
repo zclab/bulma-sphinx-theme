@@ -303,7 +303,7 @@ var setupSearchButtons = () => {
 };
 
 /*******************************************************************************
- * dropdown trigger setup for bulma, see https://bulma.io/lib/main.js?v=202305240833
+ * dropdown trigger setup for bulma, see https://bulma.io/lib/main.js?v=202305240833 and https://siongui.github.io/2018/01/19/bulma-dropdown-with-javascript/
  */
 
 function getAll(selector) {
