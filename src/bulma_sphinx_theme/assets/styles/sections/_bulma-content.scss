@@ -9,6 +9,11 @@
     overflow-wrap: break-word;
     text-align: justify;
 
+    @include touch {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     h1,
     h2,
     h3,
