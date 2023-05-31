@@ -212,7 +212,9 @@ details.sd-dropdown {
     border: 1px solid var(--bst-sd-dropdown-color) !important;
 
     & + div.sd-summary-content {
-      border: 1px solid var(--bst-sd-dropdown-color) !important;
+      border-bottom: 1px solid var(--bst-sd-dropdown-color) !important;
+      border-left: 1px solid var(--bst-sd-dropdown-color) !important;
+      border-right: 1px solid var(--bst-sd-dropdown-color) !important;
       border-bottom-left-radius: calc(0.25rem - 1px);
     }
 
