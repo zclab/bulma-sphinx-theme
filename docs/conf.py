@@ -74,17 +74,21 @@ html_theme_options = {
             "svg": "github",
         },
         {
+            "name": "Pypi",
+            "url": "https://pypi.org/project/bulma-sphinx-theme/",
+            "svg": "package",
+        },
+        {
             "name": "Bulma",
             "url": "https://bulma.io/",
             "svg": "bulma",
         },
+    ],
+    "external_links": [
         {
             "name": "Pydata",
             "url": "https://pydata-sphinx-theme.readthedocs.io/en/latest/",
-            "image": "https://pydata-sphinx-theme.readthedocs.io/en/latest/_static/pydata-logo.png",
         },
-    ],
-    "external_links": [
         {"name": "Furo", "url": "https://pradyunsg.me/furo/quickstart/"},
         {
             "name": "Sphinx book theme",
