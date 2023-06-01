@@ -1,0 +1,33 @@
+svg {
+  &.svg-bulma,
+  &.svg-github,
+  &.svg-home,
+  &.svg-pencil,
+  &.svg-file-description,
+  &.svg-clock-edit,
+  &.svg-search,
+  &.svg-package,
+  &.svg-sun,
+  &.svg-sunset,
+  &.svg-moon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &.svg-home,
+  &.svg-search,
+  &.svg-pencil,
+  &.svg-clock-edit,
+  &.svg-file-description {
+    fill: var(--bst-color-text-base);
+
+    &:hover {
+      fill: var(--bst-color-link);
+    }
+  }
+
+  &.svg-github,
+  &.svg-package {
+    color: var(--bst-color-text-base);
+  }
+}

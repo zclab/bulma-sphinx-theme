@@ -119,29 +119,3 @@ a {
     mask-repeat: no-repeat;
   }
 }
-
-svg {
-  &.svg-bulma,
-  &.svg-github,
-  &.svg-gitlab,
-  &.svg-home,
-  &.svg-pencil,
-  &.svg-file-description,
-  &.svg-clock-edit,
-  &.svg-search,
-  &.svg-package,
-  &.svg-sun,
-  &.svg-sunset,
-  &.svg-moon {
-    width: 100%;
-    height: 100%;
-    fill: var(--bst-color-text-base);
-  }
-}
-
-#svg-github,
-#svg-package {
-  svg {
-    stroke: var(--bst-color-text-base);
-  }
-}
