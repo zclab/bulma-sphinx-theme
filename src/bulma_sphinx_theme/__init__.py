@@ -50,11 +50,6 @@ def _html_page_context(
             context["css_files"],
             ["styles/bulma-sphinx-theme.css"],
         )
-    if "scripts" in context:
-        _add_asset_hashes(
-            context["scripts"],
-            ["scripts/bulma-sphinx-theme.js"],
-        )
 
     # determine the startdepth for building the theme
     theme_options = utils.get_theme_options(app)
