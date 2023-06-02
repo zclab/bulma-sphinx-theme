@@ -13,3 +13,22 @@ html_theme_options = {
     }
 }
 ```
+
+## Changing sidenav background
+
+We can also specify the sidenav background (light color or dark color). To change the background, you need to provide the `bst-color-background-sidenav` color variable value to Bulma sphinx theme, for example,
+
+```python
+html_theme_options = {
+    "light_colors": {
+        "bst-color-background-sidenav": "rgb(240, 248, 255)",
+    },
+    "dark_colors": {
+        "bst-color-background-sidenav": "black",
+    },
+}
+```
+
+```{note}
+Bulma sphinx theme does not check the value of the color variable, make sure you provide the right value to make it work!
+```
