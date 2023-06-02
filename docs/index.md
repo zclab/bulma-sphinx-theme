@@ -17,12 +17,3 @@ user_guide/index
 
 examples/index
 ```
-
-## Demo
-
-```{toctree}
-:maxdepth: 2
-
-Components <web-components>
-Develop <develop>
-```

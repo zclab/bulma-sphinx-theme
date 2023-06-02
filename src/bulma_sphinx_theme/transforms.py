@@ -120,8 +120,8 @@ class WrapTableAndMathInAContainerTransform(SphinxPostTransform):
             node.parent.replace(node, new_node)
             new_node.append(node)
 
-        for node in list(get_nodes(nodes.math_block)):
-            new_node = nodes.container(classes=["math-wrapper"])
-            new_node.update_all_atts(node)
-            node.parent.replace(node, new_node)
-            new_node.append(node)
+        # for node in list(get_nodes(nodes.math_block)):
+        #     new_node = nodes.container(classes=["math-wrapper"])
+        #     new_node.update_all_atts(node)
+        #     node.parent.replace(node, new_node)
+        #     new_node.append(node)

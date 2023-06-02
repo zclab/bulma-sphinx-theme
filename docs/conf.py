@@ -64,7 +64,7 @@ todo_include_todos = True
 # fontawesome_included = True
 
 html_theme_options = {
-    "header_links_before_dropdown": 5,
+    "header_links_before_dropdown": 3,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "header_icons": [
@@ -81,7 +81,7 @@ html_theme_options = {
         {
             "name": "Bulma",
             "url": "https://bulma.io/",
-            "svg": "bulma",
+            "image": "https://bulma.io/assets/Bulma%20Icon.svg",
         },
     ],
     "external_links": [

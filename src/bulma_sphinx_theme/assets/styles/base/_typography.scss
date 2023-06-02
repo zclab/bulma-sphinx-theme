@@ -17,7 +17,9 @@ textarea {
 }
 
 code,
-pre {
+pre,
+kbd,
+samp {
   font-family: var(--font-stack--monospace);
 }
 

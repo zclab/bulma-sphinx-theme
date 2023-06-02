@@ -251,7 +251,7 @@ div.admonition,
     margin-top: 0;
 
     // Undo the .sidebar directive border
-    border-width: 0 0 0 0.2rem;
+    // border-width: 0 0 0 0.2rem;
 
     // TODO: these semantic-color-names border-color rules might no longer be
     //       needed when we drop support for Sphinx 4 / docutils 0.17
