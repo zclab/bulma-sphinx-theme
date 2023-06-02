@@ -19,4 +19,5 @@ The theme and user guide is working in progress.
 navbar
 sidenav
 source-buttons
+search
 ```
