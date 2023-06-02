@@ -67,7 +67,7 @@ html_theme_options = {
     "header_links_before_dropdown": 3,
     "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
-    "header_icons": [
+    "icon_links": [
         {
             "name": "Github",
             "url": "https://github.com/zclab/bulma-sphinx-theme",
@@ -108,13 +108,7 @@ html_theme_options = {
     "source_directory": "docs/",
     "use_edit_page_button": True,
     "fix_navbar": True,
-    "information_panel": [],
-    "navbar_start": [],
-    "navbar_end": ["navbar-nav.html", "theme-swither.html", "header-icons.html"],
     "have_top_navbar": True,
-    "light_colors": {
-        "bst-color-background-sidenav": "rgb(240, 248, 255)",
-    },
 }
 
 html_context = {"default_mode": "auto"}
