@@ -44,7 +44,22 @@ And here is a really long equation with a label!
 \frac{1}{r^2 \sin^2\theta} \frac{\partial^2 f}{\partial \phi^2}
 ```
 
-You can add a link to equations like the one above: {eq}`My label` and {eq}`My label 2`.
+And here is a multi-line equation with a label!
+
+```{math}
+:label: My label 3
+
+\begin{array}{l}
+G_{13}=0 \\
+G_{12}=r_{13}+\gamma G_{13}=-1+0.6 \times 0=-1 \\
+G_{11}=r_{12}+\gamma G_{12}=-1+0.6 \times(-1)=-1.6 \\
+G_{10}=r_{11}+\gamma G_{11}=-1+0.6 \times(-1.6)=-1.96 \\
+G_{9}=r_{10}+\gamma G_{10}=-1+0.6 \times(-1.96)=-2.176 \approx-2.18 \\
+G_{8}=r_{9}+\gamma G_{9}=-1+0.6 \times(-2.176)=-2.3056 \approx-2.3 \\
+\end{array}
+```
+
+You can add a link to equations like the one above: {eq}`My label` and {eq}`My label 2` and {eq}`My label 3`.
 
 ## Code blocks
 
