@@ -1,7 +1,7 @@
 {#
 This is where user-provided CSS variables get converted into actual values.
 #}
-{% macro define_css_variables(user_customisations, fixed_navbar) -%}
+{% macro define_css_variables(user_customisations, fixed_navbar=false) -%}
 {% if fixed_navbar %}
 --sidenav-sticky-top-factor: 1;
 {% endif %}
@@ -16,5 +16,11 @@ This is where user-provided CSS variables get converted into actual values.
 <style>
     html {
             {{ define_css_variables(theme_css_variables, theme_fix_navbar) }}
+    }
+    html[data-theme="light"] {
+            {{ define_css_variables(theme_light_colors) }}
+    }
+    html[data-theme="dark"] {
+            {{ define_css_variables(theme_dark_colors) }}
     }
 </style>

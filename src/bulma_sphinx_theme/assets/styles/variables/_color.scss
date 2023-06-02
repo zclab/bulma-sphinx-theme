@@ -80,10 +80,6 @@ $bst-semantic-colors: (
       "light": rgb(225, 225, 225),
       "dark": rgb(55, 55, 55),
     ),
-  "background-sidenav": (
-    "light": rgb(240, 248, 255),
-    "dark": rgb(18, 18, 18),
-  ),
   "background-info-panel": (
     "light": linear-gradient(0.25turn, #e3e5f7, #d9e1ef, #e8ebfb),
     "dark": linear-gradient(0.25turn, #5e605a, #51544e, #5a5c58),
@@ -119,6 +115,7 @@ $bst-semantic-colors: (
   // assign the "duplicate" colors (ones that just reference other variables)
   & {
     --bst-color-link-hover: var(--bst-color-warning);
+    --bst-color-background-sidenav: var(--bst-color-background);
   }
 
   // adapt to light/dark-specific content
