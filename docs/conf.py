@@ -81,7 +81,7 @@ html_theme_options = {
         {
             "name": "Bulma",
             "url": "https://bulma.io/",
-            "svg": "bulma",
+            "image": "https://bulma.io/assets/Bulma%20Icon.svg",
         },
     ],
     "external_links": [
