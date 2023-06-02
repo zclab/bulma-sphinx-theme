@@ -373,7 +373,7 @@ function main() {
   setupSearchButtons();
   setupDropdwon();
   navbarBurger();
-  header = document.querySelector(".navbar");
+  header = document.querySelector("header");
   tocScroll = document.querySelector(".toc-scroll");
   setup();
 }
