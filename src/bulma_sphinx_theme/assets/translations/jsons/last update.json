@@ -1,0 +1,17 @@
+[
+  {
+    "language": "English",
+    "symbol": "en",
+    "text": "last update"
+  },
+  {
+    "language": "Chinese Simplified",
+    "symbol": "zh_CN",
+    "text": "上次更新"
+  },
+  {
+    "language": "Chinese Traditional",
+    "symbol": "zh-tw",
+    "text": "上次更新"
+  }
+]
