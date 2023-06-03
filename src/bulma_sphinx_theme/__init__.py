@@ -9,7 +9,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from . import pygment, toctree, transforms, utils
 
-__version__ = "0.0.9.dev0"
+__version__ = "0.0.9.dev1"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
@@ -71,6 +71,18 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     have_navbar = theme_options.get("have_top_navbar", True)
     if not (have_navbar):
         theme_options["fix_navbar"] = False
+
+    info_include_directly = theme_options.get(
+        "information_panel_include_directly", None
+    )
+    if info_include_directly and isinstance(info_include_directly, list):
+        theme_options["information_panel_include_directly"].extend(
+            info_include_directly
+        )
+
+    navbar_include_directly = theme_options.get("navbar_include_directly", None)
+    if navbar_include_directly and isinstance(navbar_include_directly, list):
+        theme_options["navbar_include_directly"].extend(navbar_include_directly)
 
     # Add an analytics ID to the site if provided
     analytics = theme_options.get("analytics", {})
