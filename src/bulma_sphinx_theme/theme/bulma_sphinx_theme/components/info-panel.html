@@ -1,7 +1,17 @@
+{%- set icon_class = "level-item icon" -%}
+
 <div class="info-panel">
-    {% include "components/search-button.html" %}
+    <!-- {% include "components/search-button.html" %} -->
 
     {%- for panel_section in theme_information_panel %}
+    {% if panel_section in theme_information_panel_include_directly %}
     {%- include panel_section %}
+    {% else %}
+    <div class="level">
+        <div class="level-left">
+            {%- include panel_section %}
+        </div>
+    </div>
+    {% endif %}
     {%- endfor %}
 </div>

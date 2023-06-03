@@ -36,11 +36,11 @@ When you disable navbar, fix navbar will not work even you set `fix_navbar` to `
 
 ## Changing header icons
 
-Bulma sphinx theme allows customising the icons that are presented in the header. These icons can be used to link to relevant resources for your project and documentation. To add custom header icons, you need to provide the `header_icons` configuration value as follows,
+Bulma sphinx theme allows customising the icons that are presented in the header. These icons can be used to link to relevant resources for your project and documentation. To add custom header icons, you need to provide the `icon_links` configuration value as follows,
 
 ```python
 html_theme_options = {
-    "header_icons": [
+    "icon_links": [
         {"name":"Gitlab", "url": "http://gitlabcom/zclab/bulma-sphinx-theme", "fontawesome":"fa-brands fa-lg fa-gitlab"},
     ],
 }

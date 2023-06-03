@@ -41,7 +41,7 @@ Your Sphinx documentation's HTML pages will now be generated with this theme! ðŸ
 
 ## Examples
 
-An examples without fix navbar: <https://zclab.github.io/bst-demo/>
+An examples without fixed navbar: <https://zclab.github.io/bst-demo/>
 
 An examples without navbar: <https://zclab.github.io/bst-nonavbar/>
 
