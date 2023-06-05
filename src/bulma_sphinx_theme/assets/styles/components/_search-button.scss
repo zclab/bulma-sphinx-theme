@@ -3,8 +3,16 @@ button.search-button {
   font-size: 0.92rem;
   background: var(--bst-color-background);
   color: var(--bst-color-text-base);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
 
-  // .icon:first-child:not(:last-child) {
-  //   margin-left: unset;
-  // }
+  .search-button-left,
+  .search-button-right {
+    display: flex;
+  }
+
+  .icon:first-child:not(:last-child) {
+    margin-left: unset;
+  }
 }
