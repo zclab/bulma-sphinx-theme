@@ -1,19 +1,20 @@
 {% if (theme_article_top_left or theme_article_top_right) and (title and pagename != root_doc) %}
-<div class="level bulma-article-top">
-    <div class="level-left">
-        {% if theme_article_top_left %}
+<div class="bulma-article-top">
+
+    {% if theme_article_top_left %}
+    <div class="article-top-left">
         {%- for top_left in theme_article_top_left %}
         {%- include top_left %}
         {%- endfor %}
-        {% endif %}
     </div>
+    {% endif %}
 
-    <div class="level-right">
-        {% if theme_article_top_right %}
+    {% if theme_article_top_right %}
+    <div class="article-top-right">
         {%- for top_right in theme_article_top_right %}
         {%- include top_right %}
         {%- endfor %}
-        {% endif %}
     </div>
+    {% endif %}
 </div>
 {% endif %}
