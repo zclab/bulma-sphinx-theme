@@ -1,15 +1,14 @@
-<button class="button is-fullwidth search-button search-button__button level" title="{{ _('Search') }}"
+<button class="button is-fullwidth search-button search-button__button" title="{{ _('Search') }}"
     aria-label="{{ _('Search') }}">
-    <div class="level-left">
-        <span class="icon level-item">
+    <div class="search-button-left">
+        <span class="icon">
             <svg class="svg-search">
                 <use href="#svg-search"></use>
             </svg>
         </span>
-        <span class="level-item">{{ theme_search_bar_text }}</span>
+        <span>{{ theme_search_bar_text }}</span>
     </div>
-    <div class="level-right">
-        <span class="search-button__kbd-shortcut level-item"><kbd
-                class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+    <div class="search-button-right">
+        <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
     </div>
 </button>

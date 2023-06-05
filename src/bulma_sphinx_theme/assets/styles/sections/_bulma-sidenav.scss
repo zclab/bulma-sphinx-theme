@@ -1,9 +1,23 @@
 .bulma-sidenav {
-  display: block;
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+
+  &.is-active {
+    @include touch {
+      display: block;
+      transform: translateX(100%);
+      width: 300px;
+      margin-left: -300px;
+      z-index: 2;
+    }
+  }
+
   clip-path: inset(0);
   background-color: var(--bst-color-background-sidenav);
   width: var(--sidenav-width);
-  border-right: 1px solid var(--bst-color-border);
   margin-top: calc(
     var(--navbar-height) * var(--sidenav-sticky-top-factor) * -1
   );
@@ -13,6 +27,7 @@
     max-height: 100vh;
     position: sticky;
     top: 0;
+    border-right: 1px solid var(--bst-color-border);
 
     .sidenav-drawer {
       display: flex;
