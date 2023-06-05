@@ -1,5 +1,20 @@
 .bulma-sidenav {
-  display: block;
+  display: none;
+
+  @include desktop {
+    display: block;
+  }
+
+  &.is-active {
+    @include touch {
+      display: block;
+      transform: translateX(100%);
+      width: 300px;
+      margin-left: -300px;
+      z-index: 2;
+    }
+  }
+
   clip-path: inset(0);
   background-color: var(--bst-color-background-sidenav);
   width: var(--sidenav-width);
