@@ -4,6 +4,13 @@
   flex-grow: 1;
   width: calc(100% - var(--sidenav-width));
 
+  .navbar-burger {
+    margin-left: unset;
+    height: 2.5rem;
+    width: 2.5rem;
+    z-index: 3;
+  }
+
   article.article-container {
     padding: 0 1rem 1rem;
     overflow-wrap: break-word;
