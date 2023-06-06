@@ -3,15 +3,23 @@
 <div class="info-panel">
     <!-- {% include "components/search-button.html" %} -->
 
-    {%- for panel_section in theme_information_panel %}
-    {% if panel_section in theme_information_panel_include_directly %}
-    {%- include panel_section %}
-    {% else %}
+    {% if theme_information_panel %}
+
+    {% if theme_information_panel.get("items") %}
+    {% for item in theme_information_panel.get("items") %}
+    {%- include item %}
+    {%- endfor %}
+    {% endif %}
+
+    {% if theme_information_panel.get("level_items") %}
     <div class="level">
         <div class="level-left">
-            {%- include panel_section %}
+            {% for level_item in theme_information_panel.get("level_items") %}
+            {%- include level_item %}
+            {%- endfor %}
         </div>
     </div>
     {% endif %}
-    {%- endfor %}
+
+    {% endif %}
 </div>
