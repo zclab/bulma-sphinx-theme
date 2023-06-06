@@ -72,17 +72,23 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if not (have_navbar):
         theme_options["fix_navbar"] = False
 
-    info_include_directly = theme_options.get(
-        "information_panel_include_directly", None
-    )
-    if info_include_directly and isinstance(info_include_directly, list):
-        theme_options["information_panel_include_directly"].extend(
-            info_include_directly
-        )
+    default_navbar_directly = ["navbar-nav.html", "icon-links.html"]
 
-    navbar_include_directly = theme_options.get("navbar_include_directly", None)
-    if navbar_include_directly and isinstance(navbar_include_directly, list):
-        theme_options["navbar_include_directly"].extend(navbar_include_directly)
+    navbar_directly = theme_options.get("navbar_include_directly", None)
+    if navbar_directly and isinstance(navbar_directly, list):
+        default_navbar_directly.extend(navbar_directly)
+    theme_options["navbar_include_directly"] = default_navbar_directly
+
+    default_panel_items = ["search-button.html"]
+    info_panel = theme_options.get("information_panel", {})
+    if info_panel.get("items"):
+        info_panel["items"] = info_panel.get("items")
+    else:
+        info_panel["items"] = default_panel_items
+
+    if info_panel.get("level_items"):
+        info_panel["level_items"] = info_panel.get("level_items")
+    theme_options["information_panel"] = info_panel
 
     # Add an analytics ID to the site if provided
     analytics = theme_options.get("analytics", {})
@@ -122,8 +128,6 @@ def update_and_remove_templates(
         "theme_navbar_start",
         "theme_navbar_end",
         "theme_navbar_include_directly",
-        "theme_information_panel",
-        "theme_information_panel_include_directly",
         "sidebars",
     ]
 
