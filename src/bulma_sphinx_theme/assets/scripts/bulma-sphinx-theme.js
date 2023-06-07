@@ -352,17 +352,36 @@ function navbarBurger() {
   );
 
   // Add a click event on each of them
-  $navbarBurgers.forEach((el) => {
-    el.addEventListener("click", () => {
+  $navbarBurgers.forEach(function ($el) {
+    $el.addEventListener("click", function (event) {
       // Get the target from the "data-target" attribute
-      const target = el.dataset.target;
+      const target = $el.dataset.target;
       const $target = document.getElementById(target);
 
       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      el.classList.toggle("is-active");
+      event.stopPropagation();
+      $el.classList.toggle("is-active");
       $target.classList.toggle("is-active");
     });
   });
+
+  // see https://segmentfault.com/q/1010000000452465 for close navburger when click empty place
+  document.addEventListener("click", function (event) {
+    var _con = $("#sidenavMenu");
+    if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+      closenavbarBurgers();
+    }
+  });
+
+  function closenavbarBurgers() {
+    $navbarBurgers.forEach(function ($el) {
+      const target = $el.dataset.target;
+      const $target = document.getElementById(target);
+
+      $el.classList.remove("is-active");
+      $target.classList.remove("is-active");
+    });
+  }
 }
 ////////////////////////////////////////////////////////////////////////////////
 // Main entrypoint
