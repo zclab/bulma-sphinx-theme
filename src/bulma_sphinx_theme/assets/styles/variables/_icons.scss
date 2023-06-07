@@ -45,4 +45,6 @@ $icons: (
 
 html {
   @include icons;
+  --bst-icon-angle-left: "\f104";
+  --bst-icon-angle-right: "\f105";
 }

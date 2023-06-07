@@ -10,21 +10,10 @@ html {
   --font-size--small--3: 77.5%;
   --font-size--small--4: 65%;
 
-  // Sidebar
-  --sidebar-caption-font-size: var(--font-size--small--2);
-  --sidebar-item-font-size: var(--font-size--small);
-  --sidebar-search-input-font-size: var(--font-size--small);
-
   // Table of Contents
   --toc-font-size: var(--font-size--small);
   --toc-font-size--mobile: var(--font-size--normal);
   --toc-title-font-size: var(--font-size--small);
-
-  // Admonitions
-  //
-  // These aren't defined in terms of %ages, since nesting these is permitted.
-  --admonition-font-size: 1em;
-  --admonition-title-font-size: 1em;
 
   // Code
   --code-font-size: var(--font-size--small);
