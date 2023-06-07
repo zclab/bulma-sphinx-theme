@@ -9,7 +9,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from . import pygment, toctree, transforms, utils
 
-__version__ = "0.1.0rc1"
+__version__ = "0.1.0.dev2"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
@@ -52,8 +52,7 @@ def _html_page_context(
         )
 
     # determine the startdepth for building the theme
-    theme_options = utils.get_theme_options(app)
-    have_navbar = theme_options.get("have_top_navbar", True)
+    have_navbar = context.get("theme_have_top_navbar", True)
     if not isinstance(have_navbar, bool):
         have_navbar = True
     context["start_depth"] = int(have_navbar)
