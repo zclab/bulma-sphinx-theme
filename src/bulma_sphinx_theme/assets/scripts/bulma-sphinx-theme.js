@@ -366,9 +366,10 @@ function navbarBurger() {
   });
 
   // see https://segmentfault.com/q/1010000000452465 for close navburger when click empty place
+  // and https://g-dragon.gitbooks.io/-javascript/content/di-si-zhang-shi-li/83001-pan-duan-shi-jian-fa-sheng-zai-mou-ge-div-wai.html
   document.addEventListener("click", function (event) {
-    var _con = $("#sidenavMenu");
-    if (!_con.is(event.target) && _con.has(event.target).length === 0) {
+    var _con = document.querySelector("#sidenavMenu");
+    if (!_con.contains(event.target) && !(_con == event.target)) {
       closenavbarBurgers();
     }
   });
