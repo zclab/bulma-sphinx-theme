@@ -72,22 +72,24 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     if not (have_navbar):
         theme_options["fix_navbar"] = False
 
+    # define navbar style
     default_navbar_directly = ["navbar-nav.html", "icon-links.html"]
-
     navbar_directly = theme_options.get("navbar_include_directly", None)
     if navbar_directly and isinstance(navbar_directly, list):
         default_navbar_directly.extend(navbar_directly)
+
     theme_options["navbar_include_directly"] = default_navbar_directly
 
+    # define information panel
     default_panel_items = ["search-button.html"]
     info_panel = theme_options.get("information_panel", {})
     if info_panel.get("items"):
         info_panel["items"] = info_panel.get("items")
     else:
         info_panel["items"] = default_panel_items
-
     if info_panel.get("level_items"):
         info_panel["level_items"] = info_panel.get("level_items")
+
     theme_options["information_panel"] = info_panel
 
     # Add an analytics ID to the site if provided
