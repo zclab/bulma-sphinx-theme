@@ -72,14 +72,20 @@ titles_only=True)
                 {% endif %}
             </div>
 
-            {% block footer %}
-            {% if theme_footer %}
-            {% include "sections/footer.html" %}
+            {% block article_footer %}
+            {% if theme_article_footer %}
+            {% include "sections/article-footer.html" %}
             {% endif %}
-            {% endblock footer %}
+            {% endblock article_footer %}
         </main>
     </div>
 </div>
 {%- endblock mainbody -%}
+
+{% block footer %}
+{% if theme_footer %}
+{% include "sections/footer.html" %}
+{% endif %}
+{% endblock footer %}
 
 {%- endblock htmlbody %}

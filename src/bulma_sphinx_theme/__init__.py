@@ -121,14 +121,15 @@ def update_and_remove_templates(
     app: sphinx.application.Sphinx, pagename: str, templatename: str, context, doctree
 ) -> None:
     template_sections = [
-        "theme_footer",
+        "theme_navbar_start",
+        "theme_navbar_end",
+        "theme_navbar_include_directly",
         "theme_article_top_left",
         "theme_article_top_right",
         "theme_article_bottom_left",
         "theme_article_bottom_right",
-        "theme_navbar_start",
-        "theme_navbar_end",
-        "theme_navbar_include_directly",
+        "theme_article_footer",
+        "theme_footer",
         "sidebars",
     ]
 
