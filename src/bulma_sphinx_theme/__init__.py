@@ -91,6 +91,15 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     theme_options["information_panel"] = info_panel
 
+    # Prepare the logo config dictionary
+    theme_logo = theme_options.get("logo")
+    if not theme_logo:
+        # In case theme_logo is an empty string
+        theme_logo = {}
+    if not isinstance(theme_logo, dict):
+        raise ValueError(f"Incorrect logo config type: {type(theme_logo)}")
+    theme_options["logo"] = theme_logo
+
     # Add an analytics ID to the site if provided
     analytics = theme_options.get("analytics", {})
     if analytics:
