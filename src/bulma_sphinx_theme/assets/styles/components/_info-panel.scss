@@ -3,11 +3,6 @@
   flex-direction: column;
   gap: 0.8rem;
   padding: var(--top-content-to-navbar-gap) 1rem 1rem 1rem;
-
-  @include touch {
-    padding: 3.25rem 1rem 1rem 1rem;
-  }
-
   background: var(--bst-color-background-info-panel);
 
   .navbar-item {
