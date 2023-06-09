@@ -52,9 +52,7 @@ def _html_page_context(
         )
 
     # determine the startdepth for building the theme
-    have_navbar = context.get("theme_have_top_navbar", True)
-    if not isinstance(have_navbar, bool):
-        have_navbar = True
+    have_navbar = context.get("theme_have_top_navbar")
     context["start_depth"] = int(have_navbar)
 
     # Basic constants
@@ -68,8 +66,12 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     theme_options = utils.get_theme_options(app)
 
     have_navbar = theme_options.get("have_top_navbar", True)
+    if not isinstance(have_navbar, bool):
+        raise ValueError(f"Incorrect have_top_navbar config type: {type(have_navbar)}")
     if not (have_navbar):
         theme_options["fix_navbar"] = False
+
+    theme_options["have_top_navbar"] = have_navbar
 
     # define navbar style
     default_navbar_directly = ["navbar-nav.html", "icon-links.html"]
@@ -81,7 +83,11 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     # define information panel
     default_panel_items = ["search-button.html"]
-    info_panel = theme_options.get("information_panel", {})
+    info_panel = theme_options.get("information_panel")
+    if not info_panel:
+        info_panel = {}
+    if not isinstance(info_panel, dict):
+        raise ValueError(f"Incorrect info panel config type: {type(info_panel)}")
     if info_panel.get("items"):
         info_panel["items"] = info_panel.get("items")
     else:
