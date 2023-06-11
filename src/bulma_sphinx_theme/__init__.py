@@ -81,21 +81,21 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
 
     theme_options["navbar_include_directly"] = default_navbar_directly
 
-    # define information panel
+    # define sidenav panel
     default_panel_items = ["search-button.html"]
-    info_panel = theme_options.get("information_panel")
-    if not info_panel:
-        info_panel = {}
-    if not isinstance(info_panel, dict):
-        raise ValueError(f"Incorrect info panel config type: {type(info_panel)}")
-    if info_panel.get("items"):
-        info_panel["items"] = info_panel.get("items")
+    sidenav_panel = theme_options.get("sidenav_panel")
+    if not sidenav_panel:
+        sidenav_panel = {}
+    if not isinstance(sidenav_panel, dict):
+        raise ValueError(f"Incorrect sidenav panel config type: {type(sidenav_panel)}")
+    if sidenav_panel.get("items"):
+        sidenav_panel["items"] = sidenav_panel.get("items")
     else:
-        info_panel["items"] = default_panel_items
-    if info_panel.get("level_items"):
-        info_panel["level_items"] = info_panel.get("level_items")
+        sidenav_panel["items"] = default_panel_items
+    if sidenav_panel.get("level_items"):
+        sidenav_panel["level_items"] = sidenav_panel.get("level_items")
 
-    theme_options["information_panel"] = info_panel
+    theme_options["sidenav_panel"] = sidenav_panel
 
     # Prepare the logo config dictionary
     theme_logo = theme_options.get("logo")

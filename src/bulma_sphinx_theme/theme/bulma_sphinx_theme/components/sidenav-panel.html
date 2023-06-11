@@ -1,25 +1,22 @@
 {%- set icon_class = "level-item icon" -%}
 
-<div class="info-panel">
+<div class="sidenav-panel">
     <!-- {% include "components/search-button.html" %} -->
 
-    {% if theme_information_panel %}
-
-    {% if theme_information_panel.get("items") %}
-    {% for item in theme_information_panel.get("items") %}
+    {% if theme_sidenav_panel.get("items") %}
+    {% for item in theme_sidenav_panel.get("items") %}
     {%- include item %}
     {%- endfor %}
     {% endif %}
 
-    {% if theme_information_panel.get("level_items") %}
+    {% if theme_sidenav_panel.get("level_items") %}
     <div class="level">
         <div class="level-left">
-            {% for level_item in theme_information_panel.get("level_items") %}
+            {% for level_item in theme_sidenav_panel.get("level_items") %}
             {%- include level_item %}
             {%- endfor %}
         </div>
     </div>
     {% endif %}
 
-    {% endif %}
 </div>
