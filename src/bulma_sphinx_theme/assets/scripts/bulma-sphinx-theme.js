@@ -344,15 +344,15 @@ var setupDropdwon = () => {
 /*******************************************************************************
  * https://bulma.io/documentation/components/navbar/#navbar-menu
  */
-function navbarBurger() {
+function toggleBurger(selector, target_selector) {
   // Get all "navbar-burger" elements
-  const $navbarBurgers = Array.prototype.slice.call(
-    document.querySelectorAll(".navbar-burger"),
+  const $toggleBurgers = Array.prototype.slice.call(
+    document.querySelectorAll(selector),
     0,
   );
 
   // Add a click event on each of them
-  $navbarBurgers.forEach(function ($el) {
+  $toggleBurgers.forEach(function ($el) {
     $el.addEventListener("click", function (event) {
       // Get the target from the "data-target" attribute
       const target = $el.dataset.target;
@@ -368,14 +368,14 @@ function navbarBurger() {
   // see https://segmentfault.com/q/1010000000452465 for close navburger when click empty place
   // and https://g-dragon.gitbooks.io/-javascript/content/di-si-zhang-shi-li/83001-pan-duan-shi-jian-fa-sheng-zai-mou-ge-div-wai.html
   document.addEventListener("click", function (event) {
-    var _con = document.querySelector("#sidenavMenu");
+    var _con = document.querySelector(target_selector);
     if (!_con.contains(event.target) && !(_con == event.target)) {
-      closenavbarBurgers();
+      closetoggleBurgers();
     }
   });
 
-  function closenavbarBurgers() {
-    $navbarBurgers.forEach(function ($el) {
+  function closetoggleBurgers() {
+    $toggleBurgers.forEach(function ($el) {
       const target = $el.dataset.target;
       const $target = document.getElementById(target);
 
@@ -383,6 +383,11 @@ function navbarBurger() {
       $target.classList.remove("is-active");
     });
   }
+}
+
+function setupToggleButton() {
+  toggleBurger(".navbar .navbar-burger", "#navbarMenu");
+  toggleBurger(".bulma-content .navbar-burger", "#sidenavMenu");
 }
 ////////////////////////////////////////////////////////////////////////////////
 // Main entrypoint
@@ -392,7 +397,7 @@ function main() {
   addModeListener();
   setupSearchButtons();
   setupDropdwon();
-  navbarBurger();
+  setupToggleButton();
   header = document.querySelector("header");
   tocScroll = document.querySelector(".toc-scroll");
   setup();
