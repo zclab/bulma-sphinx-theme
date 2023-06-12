@@ -21,6 +21,7 @@ kitchen-sink/index
 :maxdepth: 2
 :numbered:
 
+test_page/index
 subpages/index
 mult_headers
 Link to an external site <https://github.com>

@@ -1,0 +1,11 @@
+{% set page_toc = generate_toc_html() %}
+{%- if not hide_toc and page_toc | length >= 1 %}
+<div class="toc-wrapper toc-scroll">
+    {% if theme_toc_title %}
+    <div class="toc-title">
+        {{ theme_toc_title }}
+    </div>
+    {% endif %}
+    {{ page_toc }}
+</div>
+{% endif %}

@@ -351,28 +351,30 @@ function toggleBurger(selector, target_selector) {
     0,
   );
 
-  // Add a click event on each of them
-  $toggleBurgers.forEach(function ($el) {
-    $el.addEventListener("click", function (event) {
-      // Get the target from the "data-target" attribute
-      const target = $el.dataset.target;
-      const $target = document.getElementById(target);
+  if ($toggleBurgers.length > 0) {
+    // Add a click event on each of them
+    $toggleBurgers.forEach(function ($el) {
+      $el.addEventListener("click", function (event) {
+        // Get the target from the "data-target" attribute
+        const target = $el.dataset.target;
+        const $target = document.getElementById(target);
 
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      event.stopPropagation();
-      $el.classList.toggle("is-active");
-      $target.classList.toggle("is-active");
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        event.stopPropagation();
+        $el.classList.toggle("is-active");
+        $target.classList.toggle("is-active");
+      });
     });
-  });
 
-  // see https://segmentfault.com/q/1010000000452465 for close navburger when click empty place
-  // and https://g-dragon.gitbooks.io/-javascript/content/di-si-zhang-shi-li/83001-pan-duan-shi-jian-fa-sheng-zai-mou-ge-div-wai.html
-  document.addEventListener("click", function (event) {
-    var _con = document.querySelector(target_selector);
-    if (!_con.contains(event.target) && !(_con == event.target)) {
-      closetoggleBurgers();
-    }
-  });
+    // see https://segmentfault.com/q/1010000000452465 for close navburger when click empty place
+    // and https://g-dragon.gitbooks.io/-javascript/content/di-si-zhang-shi-li/83001-pan-duan-shi-jian-fa-sheng-zai-mou-ge-div-wai.html
+    document.addEventListener("click", function (event) {
+      var _con = document.querySelector(target_selector);
+      if (!_con.contains(event.target) && !(_con == event.target)) {
+        closetoggleBurgers();
+      }
+    });
+  }
 
   function closetoggleBurgers() {
     $toggleBurgers.forEach(function ($el) {

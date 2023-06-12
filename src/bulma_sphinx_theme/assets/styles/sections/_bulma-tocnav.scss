@@ -4,11 +4,9 @@
 
   .toc-wrapper {
     position: sticky;
-    top: calc(var(--navbar-height) + var(--top-content-to-navbar-gap));
+    top: calc(var(--navbar-height) + var(--gap-content-navbar));
     overflow-y: auto;
-    max-height: calc(
-      100vh - var(--navbar-height) - var(--top-content-to-navbar-gap)
-    );
+    max-height: calc(100vh - var(--navbar-height) - var(--gap-content-navbar));
   }
 
   ul.table-of-contents {

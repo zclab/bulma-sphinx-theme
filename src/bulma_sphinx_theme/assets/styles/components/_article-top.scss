@@ -1,8 +1,8 @@
 .bulma-article-top {
-  padding-top: var(--top-content-to-navbar-gap);
+  padding-top: var(--gap-content-navbar);
 
   @include touch {
-    padding-top: 0;
+    padding-top: var(--gap-content-navbar--mobile);
   }
 
   display: flex;
