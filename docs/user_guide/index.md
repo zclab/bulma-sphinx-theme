@@ -20,6 +20,8 @@ navbar
 sidenav
 source
 search
+styling
+fonts
 theme-elements
 web-components
 develop

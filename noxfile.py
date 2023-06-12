@@ -26,15 +26,6 @@ def docs_live(session):
     session.run("stb", "serve", "docs/", *session.posargs)
 
 
-@nox.session(name="docs-deploy", reuse_venv=True)
-def docs_deploy(session):
-    session.install("-r", "docs/requirements.txt")
-    session.install(".")
-
-    # Generate documentation into `build/docs`
-    session.run("make", "build", external=True)
-
-
 @nox.session(reuse_venv=True)
 def lint(session):
     session.install("pre-commit")
