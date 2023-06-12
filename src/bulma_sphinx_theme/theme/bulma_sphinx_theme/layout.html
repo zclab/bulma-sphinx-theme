@@ -33,6 +33,7 @@ titles_only=True)
 
         {%- include "search-wrapper.html" -%}
 
+        {% if not hide_sidenav %}
         <div class="bulma-sidenav" id="sidenavMenu">
             <div class="sidenav-viewport">
                 {% block left_sidebar %}
@@ -40,12 +41,14 @@ titles_only=True)
                 {% endblock left_sidebar %}
             </div>
         </div>
+        {% endif %}
 
         <main class="bulma-content">
             {%- include "components/toggle-sidenav.html" -%}
 
             <div class="columns">
-                <article role="main" class="column is-three-quarters article-container">
+                <article role="main"
+                    class="column {% if not hide_tocnav %} is-three-quarters {% endif %} article-container">
                     {% include "sections/article-top.html" %}
                     {% include "components/searchbox.html" %}
 
@@ -56,20 +59,7 @@ titles_only=True)
                     {% include "components/prev-next.html" %}
                     {% endif %}
                 </article>
-
-                {% set page_toc = generate_toc_html() %}
-                {%- if page_toc | length >= 1 %}
-                <aside class="column is-one-quarter bulma-tocnav is-hidden-mobile">
-                    <div class="toc-wrapper toc-scroll">
-                        {% if theme_toc_title %}
-                        <div class="toc-title">
-                            {{ theme_toc_title }}
-                        </div>
-                        {% endif %}
-                        {{ page_toc }}
-                    </div>
-                </aside>
-                {% endif %}
+                {% include "sections/tocnav.html" %}
             </div>
 
             {% block article_footer %}
