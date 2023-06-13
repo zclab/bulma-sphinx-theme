@@ -9,7 +9,7 @@ Bulma sphinx theme allows specifying the width of sidenav, the sidenav width is 
 ```python
 html_theme_options = {
     "css_variables": {
-        "sidenav-width": "20%",
+        "sidenav-width": "320px",
     }
 }
 ```
