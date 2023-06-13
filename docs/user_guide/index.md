@@ -22,6 +22,7 @@ source
 search
 styling
 fonts
+landing
 theme-elements
 web-components
 develop
