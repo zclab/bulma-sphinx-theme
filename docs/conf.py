@@ -110,7 +110,6 @@ html_theme_options = {
     "fix_navbar": True,
     "have_top_navbar": True,
     "navbar_start": ["navbar-nav.html", "megamenu.html"],
-    "navbar_include_directly": ["megamenu.html"],
 }
 
 html_context = {"default_mode": "auto"}
