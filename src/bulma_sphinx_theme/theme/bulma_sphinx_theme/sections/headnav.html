@@ -14,12 +14,12 @@
     <div class="navbar-start">
         {% if theme_navbar_start %}
         {%- for ns_section in theme_navbar_start %}
-        {% if ns_section in theme_navbar_include_directly %}
-        {%- include ns_section %}
-        {% else %}
+        {% if ns_section in theme_navbar_wrapped_items %}
         <div class="navbar-item">
             {%- include ns_section %}
         </div>
+        {% else %}
+        {%- include ns_section %}
         {% endif %}
         {%- endfor %}
         {% endif %}
@@ -28,12 +28,12 @@
     <div class="navbar-end">
         {% if theme_navbar_end %}
         {%- for ne_section in theme_navbar_end %}
-        {% if ne_section in theme_navbar_include_directly %}
-        {%- include ne_section %}
-        {% else %}
+        {% if ne_section in theme_navbar_wrapped_items %}
         <div class="navbar-item">
             {%- include ne_section %}
         </div>
+        {% else %}
+        {%- include ne_section %}
         {% endif %}
         {%- endfor %}
         {% endif %}

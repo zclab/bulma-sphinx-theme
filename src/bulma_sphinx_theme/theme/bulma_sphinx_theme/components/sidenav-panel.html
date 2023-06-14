@@ -1,22 +1,18 @@
+{% if theme_sidenav_panel or theme_sidenav_panel_wrapped_items %}
 {%- set icon_class = "level-item icon" -%}
-
 <div class="sidenav-panel">
-    <!-- {% include "components/search-button.html" %} -->
-
-    {% if theme_sidenav_panel.get("items") %}
-    {% for item in theme_sidenav_panel.get("items") %}
-    {%- include item %}
+    {% for panel_item in theme_sidenav_panel %}
+    {%- include panel_item %}
     {%- endfor %}
-    {% endif %}
 
-    {% if theme_sidenav_panel.get("level_items") %}
+    {% if theme_sidenav_panel_wrapped_items %}
     <div class="level">
         <div class="level-left">
-            {% for level_item in theme_sidenav_panel.get("level_items") %}
-            {%- include level_item %}
+            {% for wrapped_item in theme_sidenav_panel_wrapped_items %}
+            {%- include wrapped_item %}
             {%- endfor %}
         </div>
     </div>
     {% endif %}
-
 </div>
+{% endif %}

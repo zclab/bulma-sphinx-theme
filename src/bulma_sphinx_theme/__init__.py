@@ -136,28 +136,45 @@ def _builder_inited(app: sphinx.application.Sphinx) -> None:
     theme_options["have_top_navbar"] = have_navbar
 
     # define navbar style
-    default_navbar_directly = ["navbar-nav.html", "icon-links.html"]
-    navbar_directly = theme_options.get("navbar_include_directly", None)
-    if navbar_directly and isinstance(navbar_directly, list):
-        default_navbar_directly.extend(navbar_directly)
-
-    theme_options["navbar_include_directly"] = default_navbar_directly
+    default_wrapped_navbar = [
+        "search-button.html",
+        "search-icon.html",
+        "search-field.html",
+        "theme-swither.html",
+    ]
+    navbar_wrapped = theme_options.get("navbar_wrapped_items", None)
+    if navbar_wrapped and isinstance(navbar_wrapped, list):
+        default_wrapped_navbar.extend(navbar_wrapped)
+    theme_options["navbar_wrapped_items"] = default_wrapped_navbar
 
     # define sidenav panel
     default_panel_items = ["search-button.html"]
+    require_wrapped_panel_items = ["theme-swither.html", "icon-links.html"]
     sidenav_panel = theme_options.get("sidenav_panel")
-    if not sidenav_panel:
-        sidenav_panel = {}
-    if not isinstance(sidenav_panel, dict):
-        raise ValueError(f"Incorrect sidenav panel config type: {type(sidenav_panel)}")
-    if sidenav_panel.get("items"):
-        sidenav_panel["items"] = sidenav_panel.get("items")
-    else:
-        sidenav_panel["items"] = default_panel_items
-    if sidenav_panel.get("level_items"):
-        sidenav_panel["level_items"] = sidenav_panel.get("level_items")
+    sidenav_panel_wrapped_items = theme_options.get("sidenav_panel_wrapped_items", [])
 
-    theme_options["sidenav_panel"] = sidenav_panel
+    if sidenav_panel is None:
+        sidenav_panel = default_panel_items
+    if not isinstance(sidenav_panel, list):
+        raise ValueError(f"Incorrect sidenav_panel config type: {type(sidenav_panel)}")
+    if not isinstance(sidenav_panel_wrapped_items, list):
+        raise ValueError(
+            f"Incorrect sidenav_panel_wrapped_items config type: {type(sidenav_panel_wrapped_items)}"
+        )
+
+    sidenav_panel.extend(sidenav_panel_wrapped_items)
+    sidenav_panel_set = list(set(sidenav_panel))
+    sidenav_panel_set.sort(key=sidenav_panel.index)
+    require_wrapped_panel_items.extend(sidenav_panel_wrapped_items)
+
+    panel_items, wrapped_panel_items = [], []
+    for item in sidenav_panel_set:
+        if item in require_wrapped_panel_items:
+            wrapped_panel_items.append(item)
+        else:
+            panel_items.append(item)
+    theme_options["sidenav_panel"] = panel_items
+    theme_options["sidenav_panel_wrapped_items"] = wrapped_panel_items
 
     # Prepare the logo config dictionary
     theme_logo = theme_options.get("logo")
@@ -200,7 +217,7 @@ def update_and_remove_templates(
     template_sections = [
         "theme_navbar_start",
         "theme_navbar_end",
-        "theme_navbar_include_directly",
+        "theme_navbar_wrapped_items",
         "theme_article_top_left",
         "theme_article_top_right",
         "theme_article_bottom_left",

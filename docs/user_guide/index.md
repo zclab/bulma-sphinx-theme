@@ -25,5 +25,6 @@ fonts
 landing
 theme-elements
 web-components
+bulma-extensions
 develop
 ```
