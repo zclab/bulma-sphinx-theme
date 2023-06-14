@@ -69,4 +69,4 @@ max_line_length = 120
 use_gitignore = true
 format_js = true
 format_css = true
-ignore = "H006,J018,T003,H025"
+ignore = "H006,J018,T003,H025,H030"

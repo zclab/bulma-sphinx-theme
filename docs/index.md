@@ -1,3 +1,10 @@
+---
+myst:
+  html_meta:
+    "description lang=en": |
+      Top-level documentation for bulma-sphinx theme..
+---
+
 # Bulma Sphinx Theme
 
 This is a bulma based sphinx theme, see the [Bulma Documentation](https://bulma.io/) for reference.
