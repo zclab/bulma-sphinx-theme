@@ -38,6 +38,10 @@
         padding-left: var(--sidebar-item-spacing-horizontal);
         overflow: auto;
 
+        &:last-child {
+          padding-bottom: 30px;
+        }
+
         .menu-list a {
           color: var(--bst-color-text-base);
 
