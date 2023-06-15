@@ -5,7 +5,15 @@
     </div>
     {%- endif -%}
 
-    {%- for sidebar_section in sidebars %}
-    {%- include sidebar_section %}
-    {%- endfor %}
+    {% if "sidenav-panel.html" in sidebars %}
+    {%- include "sidenav-panel.html" %}
+    {% endif %}
+
+    <nav class="menu">
+        {%- for sidebar_section in sidebars %}
+        {% if sidebar_section != "sidenav-panel.html" %}
+        {%- include sidebar_section %}
+        {% endif %}
+        {%- endfor %}
+    </nav>
 </div>
