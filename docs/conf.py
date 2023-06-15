@@ -86,6 +86,10 @@ html_theme_options = {
     ],
     "external_links": [
         {
+            "name": "Demo",
+            "url": "https://zclab.github.io/bst-nonavbar/",
+        },
+        {
             "name": "Pydata",
             "url": "https://pydata-sphinx-theme.readthedocs.io/en/latest/",
         },

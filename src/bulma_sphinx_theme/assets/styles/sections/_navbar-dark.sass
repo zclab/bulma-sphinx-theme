@@ -1,0 +1,48 @@
+html[data-theme="dark"]
+  .navbar
+    @each $name, $pair in $navbar-colors
+      &.is-#{$name}
+        background-color: $black
+        color: $white
+        .navbar-brand
+          & > .navbar-item,
+          .navbar-link
+            color: $white
+          & > a.navbar-item,
+          .navbar-link
+            &:focus,
+            &:hover,
+            &.is-active
+              background-color: #363232
+              color: $white
+          .navbar-link
+            &::after
+              border-color: $white
+        .navbar-burger
+          color: $white
+        +from($navbar-breakpoint)
+          .navbar-start,
+          .navbar-end
+            & > .navbar-item,
+            .navbar-link
+              color: $white
+            & > a.navbar-item,
+            .navbar-link
+              &:focus,
+              &:hover,
+              &.is-active
+                background-color: #363232
+                color: $white
+            .navbar-link
+              &::after
+                border-color: $white
+          .navbar-item.has-dropdown:focus .navbar-link,
+          .navbar-item.has-dropdown:hover .navbar-link,
+          .navbar-item.has-dropdown.is-active .navbar-link
+            background-color: #363232
+            color: $white
+          .navbar-dropdown
+            a.navbar-item
+              &.is-active
+                background-color: #363232
+                color: $white
