@@ -1,68 +1,78 @@
 html[data-theme="dark"]
+  $navbar-dropdown-background-dark-color: $black !default
+  $navbar-dropdown-item-hover-background-dark-color: #363232
+  $navbar-dropdown-item-hover-dark-color: $white !default
+  $navbar-dropdown-item-active-background-dark-color: #363232
+  $navbar-dropdown-item-active-dark-color: $link !default
+  $navbar-item-hover-background-dark-color: #363232
+  $navbar-dark-colors: mergeColorMaps(("white": ($black, $white), "black": ($black, $white), "light": ($black, $white), "dark": ($black, $white), "primary": ($black, $white), "link": ($black, $white), "info": ($black, $white), "success": ($black, $white), "warning": ($black, $white), "danger": ($black, $white)), $custom-colors) !default
+
   .navbar
-    @each $name, $pair in $navbar-colors
+    @each $name, $pair in $navbar-dark-colors
+      $color: nth($pair, 1)
+      $color-invert: nth($pair, 2)
       &.is-#{$name}
-        background-color: $black
-        color: $white
+        background-color: $color
+        color: $color-invert
         .navbar-brand
           & > .navbar-item,
           .navbar-link
-            color: $white
+            color: $color-invert
           & > a.navbar-item,
           .navbar-link
             &:focus,
             &:hover,
             &.is-active
               background-color: #363232
-              color: $white
+              color: $color-invert
           .navbar-link
             &::after
-              border-color: $white
+              border-color: $color-invert
         .navbar-burger
-          color: $white
+          color: $color-invert
         +from($navbar-breakpoint)
           .navbar-start,
           .navbar-end
             & > .navbar-item,
             .navbar-link
-              color: $white
+              color: $color-invert
             & > a.navbar-item,
             .navbar-link
               &:focus,
               &:hover,
               &.is-active
                 background-color: #363232
-                color: $white
+                color: $color-invert
             .navbar-link
               &::after
-                border-color: $white
+                border-color: $color-invert
           .navbar-item.has-dropdown:focus .navbar-link,
           .navbar-item.has-dropdown:hover .navbar-link,
           .navbar-item.has-dropdown.is-active .navbar-link
             background-color: #363232
-            color: $white
+            color: $color-invert
           .navbar-dropdown
             a.navbar-item
               &.is-active
                 background-color: #363232
-                color: $white
+                color: $color-invert
 
   +from($navbar-breakpoint)
     .navbar-dropdown
-      background-color: $black
+      background-color: $navbar-dropdown-background-dark-color
       a.navbar-item
         color: $white
         &:focus,
         &:hover
-          background-color: #363232
-          color: $white
+          background-color: $navbar-dropdown-item-hover-background-dark-color
+          color: $navbar-dropdown-item-hover-dark-color
         &.is-active
-          background-color: #363232
-          color: $white
+          background-color: $navbar-dropdown-item-active-background-dark-color
+          color: $navbar-dropdown-item-active-dark-color
     .navbar-item.has-dropdown
       color: $white
       &:focus,
       &:hover,
       &.is-active
         .navbar-link
-          background-color: #363232
+          background-color: $navbar-item-hover-background-dark-color
