@@ -5,7 +5,7 @@ html[data-theme="dark"]
   $navbar-dropdown-item-active-background-dark-color: #363232
   $navbar-dropdown-item-active-dark-color: $link !default
   $navbar-item-hover-background-dark-color: #363232
-  $navbar-dark-colors: mergeColorMaps(("white": ($black, $white), "black": ($black, $white), "light": ($black, $white), "dark": ($black, $white), "primary": ($black, $white), "link": ($black, $white), "info": ($black, $white), "success": ($black, $white), "warning": ($black, $white), "danger": ($black, $white)), $custom-colors) !default
+  $navbar-dark-colors: mergeColorMaps(("white": ($black, $white), "black": ($black, $white), "light": ($black, $white), "dark": ($black, $white), "primary": ($primary-dark, $primary-light), "link": ($link-dark, $link-light), "info": ($info-dark, $info-light), "success": ($success-dark, $success-light), "warning": ($warning-dark, $warning-light), "danger": ($danger-dark, $danger-light)), $custom-colors) !default
 
   .navbar
     @each $name, $pair in $navbar-dark-colors

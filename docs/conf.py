@@ -65,7 +65,7 @@ todo_include_todos = True
 
 html_theme_options = {
     "header_links_before_dropdown": 3,
-    "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
+    "navbar_color_style": "is-info",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "icon_links": [
         {
