@@ -113,7 +113,10 @@ html_theme_options = {
     "use_edit_page_button": True,
     "fix_navbar": True,
     "have_top_navbar": True,
-    "navbar_start": ["navbar-nav.html", "megamenu.html"],
+    "navbar_start": [
+        "navbar-nav.html",
+    ],
+    "navbar_end": ["megamenu.html", "theme-swither.html", "icon-links.html"],
 }
 
 html_context = {"default_mode": "auto"}
