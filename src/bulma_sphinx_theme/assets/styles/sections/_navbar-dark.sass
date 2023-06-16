@@ -5,7 +5,7 @@ html[data-theme="dark"]
   $navbar-dropdown-item-active-background-dark-color: #363232
   $navbar-dropdown-item-active-dark-color: $link !default
   $navbar-item-hover-background-dark-color: #363232
-  $navbar-dark-colors: mergeColorMaps(("white": ($black, $white), "black": ($black, $white), "light": ($black, $white), "dark": ($black, $white), "primary": ($primary-dark, $primary-light), "link": ($link-dark, $link-light), "info": ($info-dark, $info-light), "success": ($success-dark, $success-light), "warning": ($warning-dark, $warning-light), "danger": ($danger-dark, $danger-light)), $custom-colors) !default
+  $navbar-dark-colors: mergeColorMaps(("white": ($dark, $white), "black": ($dark, $white), "light": ($dark, $white), "dark": ($dark, $white), "primary": ($primary-dark, $primary-light), "link": ($link-dark, $link-light), "info": ($info-dark, $info-light), "success": ($success-dark, $success-light), "warning": ($warning-dark, $warning-light), "danger": ($danger-dark, $danger-light)), $custom-colors) !default
 
   .navbar
     @each $name, $pair in $navbar-dark-colors
@@ -23,7 +23,7 @@ html[data-theme="dark"]
             &:focus,
             &:hover,
             &.is-active
-              background-color: #363232
+              background-color: bulmaDarken($color, 5%)
               color: $color-invert
           .navbar-link
             &::after
@@ -41,7 +41,7 @@ html[data-theme="dark"]
               &:focus,
               &:hover,
               &.is-active
-                background-color: #363232
+                background-color: bulmaDarken($color, 5%)
                 color: $color-invert
             .navbar-link
               &::after
@@ -49,12 +49,12 @@ html[data-theme="dark"]
           .navbar-item.has-dropdown:focus .navbar-link,
           .navbar-item.has-dropdown:hover .navbar-link,
           .navbar-item.has-dropdown.is-active .navbar-link
-            background-color: #363232
+            background-color: bulmaDarken($color, 5%)
             color: $color-invert
           .navbar-dropdown
             a.navbar-item
               &.is-active
-                background-color: #363232
+                background-color: bulmaDarken($color, 5%)
                 color: $color-invert
 
   +from($navbar-breakpoint)
