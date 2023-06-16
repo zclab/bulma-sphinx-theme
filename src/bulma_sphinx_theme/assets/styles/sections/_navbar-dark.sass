@@ -46,3 +46,23 @@ html[data-theme="dark"]
               &.is-active
                 background-color: #363232
                 color: $white
+
+  +from($navbar-breakpoint)
+    .navbar-dropdown
+      background-color: $black
+      a.navbar-item
+        color: $white
+        &:focus,
+        &:hover
+          background-color: #363232
+          color: $white
+        &.is-active
+          background-color: #363232
+          color: $white
+    .navbar-item.has-dropdown
+      color: $white
+      &:focus,
+      &:hover,
+      &.is-active
+        .navbar-link
+          background-color: #363232
