@@ -6,9 +6,13 @@
       & > .navbar-item
         .theme-switch-button span
           color: white
+          @include touch
+            color: var(--bst-color-text-base)
         &.ext-link span.icon
           .svg-github, .svg-package
             color: white
+            @include touch
+              color: var(--bst-color-text-base)
 
   .navbar-item
     .theme-switch-button span
@@ -29,6 +33,7 @@
       display: inline-block
 
 html[data-theme="dark"]
+  $navbar-background-dark-color: $black !default
   $navbar-dropdown-background-dark-color: $black !default
   $navbar-dropdown-item-hover-background-dark-color: #363232
   $navbar-dropdown-item-hover-dark-color: $white !default
@@ -106,3 +111,19 @@ html[data-theme="dark"]
       &.is-active
         .navbar-link
           background-color: $navbar-item-hover-background-dark-color
+
+  +until($navbar-breakpoint)
+    .navbar-menu
+      background-color: $navbar-background-dark-color
+
+  .navbar-item,
+  .navbar-link
+    color: var(--bst-color-text-base)
+
+  a.navbar-item,
+  .navbar-link
+    &:focus,
+    &:focus-within,
+    &:hover,
+    &.is-active
+      color: $link
