@@ -64,8 +64,8 @@ todo_include_todos = True
 # fontawesome_included = True
 
 html_theme_options = {
-    "header_links_before_dropdown": 3,
-    "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
+    "header_links_before_dropdown": 2,
+    "navbar_color_style": "is-success",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "icon_links": [
         {
@@ -85,6 +85,10 @@ html_theme_options = {
         },
     ],
     "external_links": [
+        {
+            "name": "Demo",
+            "url": "https://zclab.github.io/bst-nonavbar/",
+        },
         {
             "name": "Pydata",
             "url": "https://pydata-sphinx-theme.readthedocs.io/en/latest/",
@@ -109,7 +113,10 @@ html_theme_options = {
     "use_edit_page_button": True,
     "fix_navbar": True,
     "have_top_navbar": True,
-    "navbar_start": ["navbar-nav.html", "megamenu.html"],
+    "navbar_start": [
+        "navbar-nav.html",
+    ],
+    "navbar_end": ["megamenu.html", "theme-swither.html", "icon-links.html"],
 }
 
 html_context = {"default_mode": "auto"}
