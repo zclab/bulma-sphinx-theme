@@ -1,7 +1,19 @@
 .navbar
   min-height: var(--navbar-height)
 
+  &.is-dark, &.is-black
+    .navbar-start, .navbar-end
+      & > .navbar-item
+        .theme-switch-button span
+          color: white
+        &.ext-link span.icon
+          .svg-github, .svg-package
+            color: white
+
   .navbar-item
+    .theme-switch-button span
+      color: var(--bst-color-text-base)
+
     &.nav-external:after
       content: ""
       margin-left: 0.3rem
