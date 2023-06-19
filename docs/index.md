@@ -23,4 +23,5 @@ user_guide/index
 :maxdepth: 2
 
 examples/index
+gallery
 ```
