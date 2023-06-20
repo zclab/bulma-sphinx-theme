@@ -23,6 +23,11 @@ user_guide/index
 :maxdepth: 2
 
 examples/index
+```
+
+```{toctree}
+:hidden:
+
 blog
 gallery
 ```
