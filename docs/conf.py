@@ -64,8 +64,8 @@ todo_include_todos = True
 # fontawesome_included = True
 
 html_theme_options = {
-    "header_links_before_dropdown": 2,
-    "navbar_color_style": "is-success",  # see styles: https://bulma.io/documentation/components/navbar/#colors
+    "header_links_before_dropdown": 3,
+    "navbar_color_style": "is-white",  # see styles: https://bulma.io/documentation/components/navbar/#colors
     "logo": {"text": "Bulma Sphinx Theme", "logo": "_static/logo.svg"},
     "icon_links": [
         {
@@ -116,12 +116,12 @@ html_theme_options = {
     "navbar_start": [
         "navbar-nav.html",
     ],
-    "navbar_end": ["megamenu.html", "theme-swither.html", "icon-links.html"],
 }
 
 html_context = {"default_mode": "auto"}
 
-blog_path = "examples/blog/index"
+blog_path = "blog"
+blog_post_pattern = "examples/blog/*/*"
 blog_authors = {
     "zclab": ("子川", "https://github.com/zclab"),
 }

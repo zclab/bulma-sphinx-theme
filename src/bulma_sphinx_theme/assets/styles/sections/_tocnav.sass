@@ -1,0 +1,41 @@
+.bulma-tocnav
+  padding: 0 1rem
+  word-break: break-word
+
+  .toc-wrapper
+    position: sticky
+    top: calc(var(--navbar-height) + var(--gap-content-navbar))
+    overflow-y: auto
+    max-height: calc(100vh - var(--navbar-height) - var(--gap-content-navbar))
+
+  ul.table-of-contents
+    font-size: var(--toc-font-size)
+
+    li
+      border-left: 1px solid var(--bst-color-border)
+
+      a
+        display: inline-block
+        color: var(--bst-color-text-base)
+        padding-left: 16px
+        height: 1.6rem
+
+      &.scroll-current > .reference
+        border-left: 1px solid $link
+        color: $link
+        font-weight: bold
+
+.toc-scroll .nav
+  display: none
+
+  &.visible
+    display: block
+
+  > .active > ul
+    display: block
+
+.toc-title
+  font-weight: 600
+  padding-left: 16px
+  padding-bottom: 5px
+  font-size: var(--toc-title-font-size)

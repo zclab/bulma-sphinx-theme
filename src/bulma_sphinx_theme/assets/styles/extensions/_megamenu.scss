@@ -6,4 +6,10 @@
     margin-bottom: 0;
     padding: 0.375rem 1rem;
   }
+
+  .container.is-fluid {
+    @include touch {
+      padding: 0;
+    }
+  }
 }
