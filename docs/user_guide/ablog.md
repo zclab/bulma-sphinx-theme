@@ -13,7 +13,7 @@ This theme has styling support for ABlog, and demonstrates some of its functiona
 
 Click below to go to the blog
 
-```{button-link} ../examples/blog/index.html
+```{button-link} ../blog.html
 :color: primary
 Go to the blog
 ```

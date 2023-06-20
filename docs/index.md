@@ -23,5 +23,6 @@ user_guide/index
 :maxdepth: 2
 
 examples/index
+blog
 gallery
 ```
