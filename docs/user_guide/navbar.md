@@ -63,7 +63,7 @@ html_css_files = [
 
 ### usage
 
-Put the following template into `_templates` dir, add set `navbar_start` or `navbar_end` to include this megamenu template.
+Put the following template into `_templates` dir, add set `navbar_start` or `navbar_end` theme option to include this megamenu template.
 
 ```html
 <div class="navbar-item has-dropdown is-hoverable is-mega">
