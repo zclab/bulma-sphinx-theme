@@ -9,7 +9,7 @@ from sphinx.builders.html import StandaloneHTMLBuilder
 from sphinx.locale import get_translation
 from . import pygment, toctree, transforms, utils
 
-__version__ = "0.2.0"
+__version__ = "0.2.1.dev0"
 logger = logging.getLogger(__name__)
 MESSAGE_CATALOG_NAME = "bulmasphinxtheme"
 
@@ -31,6 +31,11 @@ def _asset_hash(path: str) -> str:
 
 
 def _add_asset_hashes(static: List[str], add_digest_to: List[str]) -> None:
+    if sphinx.version_info >= (7, 1):
+        # https://github.com/sphinx-doc/sphinx/pull/11415 added the relevant
+        # functionality to Sphinx, so we don't need to do anything.
+        return
+
     for asset in add_digest_to:
         index = static.index("_static/" + asset)
         static[index].filename = _asset_hash(asset)  # type: ignore
@@ -243,7 +248,7 @@ def update_and_remove_templates(
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, Any]:
     """Entry point for sphinx theming."""
-    app.require_sphinx("3.0")
+    app.require_sphinx("6.0")
 
     theme_dir = _get_html_theme_path()
     app.add_html_theme("bulma_sphinx_theme", theme_dir)
