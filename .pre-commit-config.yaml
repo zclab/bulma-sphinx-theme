@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.2
+    rev: v3.0.3
     hooks:
       - id: prettier
         # Exclude the HTML, since it doesn't understand Jinja2
@@ -8,12 +8,12 @@ repos:
         exclude: .+\.html|webpack\.config\.js
 
   - repo: https://github.com/psf/black
-    rev: 23.7.0
+    rev: 23.9.1
     hooks:
       - id: black
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.0.286"
+    rev: "v0.0.290"
     hooks:
       - id: ruff
 
@@ -31,13 +31,13 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.10.1
+    rev: v3.11.0
     hooks:
       - id: pyupgrade
         args: [--py37-plus]
 
   - repo: https://github.com/Riverside-Healthcare/djLint
-    rev: v1.32.1
+    rev: v1.33.0
     hooks:
       - id: djlint-jinja
         types_or: ["html"]
