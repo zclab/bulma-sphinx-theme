@@ -27,13 +27,13 @@ jobs:
           python -m build
 
       - name: Upload source distribution as an action artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: sdist
           path: dist/bulma-sphinx-theme-*.tar.gz
 
       - name: Upload wheel distribution as an action artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: wheel
           path: dist/bulma-sphinx-theme-*-py3-none-any.whl
