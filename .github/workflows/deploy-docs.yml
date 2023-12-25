@@ -34,7 +34,7 @@ jobs:
         run: |
           sudo apt-get install gettext
           pipx run nox -s docs
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: ./build/docs/
 
