@@ -39,12 +39,6 @@ Your Sphinx documentation's HTML pages will now be generated with this theme! ðŸ
 
 <!-- end quickstart -->
 
-## Examples
-
-An examples without fixed navbar: <https://zclab.github.io/bst-demo/>
-
-An examples without navbar: <https://zclab.github.io/bst-nonavbar/>
-
 ## Documentation
 
 See [the bulma sphinx theme](https://bulma-sphinx-theme.readthedocs.io/en/latest/) for more information. Your can also refer to [Bulma Documentation](https://bulma.io/) for more sophisticated change.
