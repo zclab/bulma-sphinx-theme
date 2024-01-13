@@ -17,7 +17,7 @@
     "sass-loader": "^13.2.0",
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1",
-    "postcss": "^8.4.21"
+    "postcss": "^8.4.31"
   },
   "dependencies": {
     "bulma": "^0.9.4"
