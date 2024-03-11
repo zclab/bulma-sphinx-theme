@@ -39,7 +39,7 @@ jobs:
           path: dist/bulma-sphinx-theme-*-py3-none-any.whl
 
       - name: Make a GitHub Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: dist/*
 
