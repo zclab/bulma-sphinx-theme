@@ -3,6 +3,7 @@
 inspired by the Furo theme
 https://github.com/pradyunsg/furo/blob/main/src/furo/__init__.py
 """
+
 from pathlib import Path
 
 from pygments.formatters import HtmlFormatter
